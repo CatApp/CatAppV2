@@ -17,6 +17,7 @@ module.exports = (app) => {
   });
 
   router.get("/studentinfo", (req, res) => {
+    console.info('ROUTES');
     myControllers.studentinfo(app, req, res);
   });
 
