@@ -6,8 +6,8 @@ block layout-content
       div.Title Student Information
     head
       .tab
-        //button.tablinks(onclick="openTab(event, 'Therapy')")id="defaultOpen" Therapy Maps
-        button#defaultOpen.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+        //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+        button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
         button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
     body
@@ -22,33 +22,23 @@ block layout-content
             FilePondPluginImagePreview,
             FilePondPluginImageResize,
             FilePondPluginImageTransform
-            );
-            const inputElement = document.querySelector('input[type="file"]');
-            const pond = FilePond.create(inputElement,{
-            imageResizeTargetWidth:256,
-            imageResizeTargetHeight:50,
-            //callback
-            onaddfile:(err,fileItem)=>{
-            console.log(err,fileItem.getMetadata('resize'))
-            },
-            /* onpreparefile:(fileItem,output)=>{
-            //const img
-            const img= new Image();
-            img.src = URL.createObjectURL(output);
-            document.body.appendChild(img);
-            }*/
-            });
-          .Uploadbtn
-            button(type="submit") Upload
-
+          );
+          const inputElement = document.querySelector('input[type="file"]');
+          const pond = FilePond.create(inputElement,{
+          imageResizeTargetWidth:256,
+          imageResizeTargetHeight:50,
+          //callback
+          });
+        .Uploadbtn
+          button(type="submit") Upload
       #RecognitionandRevision.tabcontent
         h3 Recognition
         p This the recognition and revision section
         
-          .results
-            canvas#recognitionCanvas
+            .results
+              canvas#recognitionCanvas
 
-      #Changework.tabcontent
+     #Changework.tabcontent
         div.changeworkTable
               p
                 | Example Text
@@ -59,8 +49,6 @@ block layout-content
                     th Things that help them 
                     th Latest submission
               script changeworkAdd()
-              
-
     footer
       div.fcontainer
         div.row
