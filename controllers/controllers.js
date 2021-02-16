@@ -19,6 +19,14 @@ module.exports = {
     });
   },
 
+  studentinfo: function (app, req, res) {
+    console.info("Student Info");
+    return res.render("studentinfo", {
+      title: "Welcome",
+      message: "Demo Node Site."
+    });
+  },
+
   viewAll: function (app, req, res) {
     console.info("View All controller");
     app

@@ -1,21 +1,214 @@
 /* CSS Document */
+*{
+	box-sizing: border-box;
+}
 .container{
-	max-width: 1366px;
+	max-width: 1;
 	/* 1366x768	16:9*/
 	margin:auto;
-
 	float: left;
-	
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
+	position: absolute;
+	min-height: 2em;
+	top: 0px;
+	bottom: 150px;
+	overflow:auto;
+}
+
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	font-family: Tahoma, Geneva, sans-serif;
+	}
+.login-form h1 {
+text-align: center;
+color: #AC3B61;
+font-size: 24px;
+padding: 20px 0 20px 0;
+}
+.login-form input[type="password"],
+.login-form input[type="text"] {
+width: 100%;
+padding: 15px;
+border: 1px solid #BAB2B5;
+margin-bottom: 15px;
+box-sizing:border-box;
+}
+.login-form input[type="submit"] {
+width: 100%;
+padding: 15px;
+background-color: #AC3B61;
+border: 0;
+box-sizing: border-box;
+cursor: pointer;
+font-weight: bold;
+color: #BAB2B5;
+}
+
+/* Add a black background color to the top navigation */
+.navbar {
+	overflow: hidden;
+	background-color:#9f1d35;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	left:0;
+	width: 100%; /* Full width */
+	height: 60px;
+	line-height: 1.5;
+	display: flex;
+	
+}
+
+#student {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+  
+#student td, #student th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+  
+#student tr:nth-child(even){background-color: #f2f2f2;}
+  
+#student tr:hover {background-color: #ddd;}
+  
+#student th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #9f1d35;
+color: white;
+}
+
+.image-responsive img{
+	width: fit-content;
+	height: 100%;
+}
+
+.pull-left{
+	display: flex;
+	width: 5%;
+}
+.nav-left li a{
+	display: inline-block;
+	color: white;
+	background-color:#9f1d35;
+	text-align:center;
+	text-decoration: none;
+	height: 100%;
+	margin: 0;
+	
+
+}
+
+.nav-left li a:hover {
+	background-color: #111;
+	color: white;
+}
+
+.nav-left ul{
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: #9f1d35;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 14px 18px;
+  max-width: 1;
+}
+
+.nav-right ul{
+	list-style-type: none;
+	padding: 0;
+	overflow: hidden;
+	background-color: #9f1d35;
+	height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 14px 18px;
+	max-width: 1;
+  }
+
+.navbar li{
+	display: flex;
+	float:left;
+	height: 100%;
+	line-height: 30px;
+	padding: 2px;
+}
+
+.nav-right {
+	float: right;
+	height: 100%;
+	line-height: 30px;
+	right: 0;
+	position: absolute;
+}
+
+.nav-right li{
+	float: right;
+}
+
+.logoutLink{
+	flex-grow: 1;
+}
+
+.searchBar form
+{
+	height: 100%;
+	display: flex;
+}
+
+.searchBar form input
+{
+	width: 80%;
+	padding: 10px;
+	border: 1px solid grey;
+	float: left;
+	background: #f1f1f1;
+}
+
+.searchBar button{
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none; /* Prevent double borders */
+	cursor: pointer;
+	height:100%;
+}
+
+.navbar a.logoutLink{
+	float:right;
+	height: 100%;
+}
+
+
+
+/* Change background on mouse-over */
+.navbar a:hover {
+	background: #ddd;
+	color: black;
+}
+  
+/* Main content */
+.container {
+	margin-top: 60px; /* Add a top margin to avoid content overlay */
 }
 
 .tab {
 	overflow: hidden;
 	border: 1px solid #ccc;
-	background-color: #f1f1f1;
+	background-color:#AC3B61 ;
   }
   
   /* Style the buttons that are used to open the tab content */
@@ -55,7 +248,7 @@
 	stylePanelLayout:circle;
 }*/
 .filepond--root {
-	max-height: 10em;
+	max-height: 50;
 	
 }
 /* the text color of the drop label*/
@@ -129,13 +322,137 @@
     background-color: transparent;
     border: 2px solid #2c3340;
 }
-header,
-.mainContent,
-.row {
- max-width: 1200px;
+
+html,body
+{
+	height: 100%;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+}
+
+head,main,
+.mainContent
+{
+ max-width: 1;
  padding: 0 5px;
  margin: auto;
+ min-height: 500px;
+ flex-grow: 1;
 }
+
+.mainheading, .studentTable p{
+	text-align: left;
+}
+
+footer {
+    background-color: #420f3c;
+    color: #fff;
+	padding: 20px;
+	position: fixed;
+	display: block;
+	flex-shrink: 0;
+	padding: 20px;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 150px
+}
+
+.fcontainer{
+	width: 750px;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: inherit;
+}
+
+.footer .row {
+    display: block;
+    flex-direction: column;
+}
+.footer .row address {
+    padding: 15px 0 5px 5px;
+}
+.footerSocialLinks {
+    flex-basis: 20%;
+}
+.footerSocialLinks ul {
+    display: flex;
+    list-style: none;
+    padding-left: 5px;
+}
+.footerSocialLinks ul li {
+    flex-basis: 40px;
+}
+.footerSocialLinks ul li a i {
+    color: #fff;
+    font-size: 1.4rem;
+}
+.footerLinks ul {
+    list-style: none;
+    padding-left: 0;
+	flex-wrap: wrap;
+	display: inline;
+
+}
+.footerLinks li {
+	border-right: 1px solid #ccc;
+	list-style: none;
+	display:inline-flex;
+}
+.footerLinks li:last-child {
+    border-right: none;
+}
+.footerLinks li a {
+    font-size: 0.8rem;
+    width: 100%;
+    display: block;
+    padding: 2px 5px;
+    text-decoration: none;
+    color: #fff;
+}
+.footerLinks li a:hover {
+	text-decoration: underline;
+}
+.Uploadbtn button{
+	display:inline-block;
+	padding:0.5em 3em;
+	border:0.16em solid #ffffff67;
+	margin:0 0.3em 0.3em 0;
+	box-sizing: border-box;
+	text-decoration:none;
+	text-decoration-color: #ffffff;
+	text-transform:uppercase;
+	font-family:'Roboto',sans-serif;
+	font-weight:400;
+	color:#FFFFFF;
+	text-align:center;
+	transition: all 0.15s;
+	background-color: #bbbbbb60;
+}
+.Uploadbtn button:hover{
+	color:#dddddd00;
+	border-color:#DDDDDD;
+}
+.Uploadbtn button:active{
+	color:#ffffff;
+	border-color:#bbbbbb04;
+	background-color: #ffffff;
+	text-decoration-color:  #ffffff67;
+}
+@media all and (max-width:30em){
+	.Uploadbtn button{
+		display:block;
+		margin:0.4em auto;
+	}
+}
+
 
 .banner{
 	background-image: url(../images/banner1-1366.jpg);
@@ -190,3 +507,285 @@ main {
 .burgerMenu {
 	display: none;
 }
+.q1{
+    font-style: oblique;
+    border: 1px solid#BAB2B5 ;
+    background:#AC3B61 ;
+    text-shadow: teal;
+    text-align: center;
+    padding: 14px 16px;
+    position: absolute;
+    top:350px;
+    left:30%;
+}
+.SliderBar{
+    width:60%;
+    margin: 24% auto;
+position: relative;
+}
+#slider{
+    -webkit-appearance: none;
+    width:100%;
+    height:40px;
+    outline:none;
+    border-radius:3px;
+}
+#slider::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:46px;
+    height:48px;
+    cursor:pointer;
+z-index:3;
+position:relative;
+}
+#selector{
+    height:96px;
+    width:46px;
+    position:absolute;
+    bottom:0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
+.SelectBtn{
+    height:48px;
+    width:46px;
+    background-image: url(../images/CatApp-Logo.png);
+    background-size: cover;
+    background-position:center;
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+}
+#SelectValue{
+    width: 46px;
+    height:48px;
+    position: absolute;
+    top:0;
+    background:#420f3c;
+    border-radius: 2px;
+    text-align: center;
+    color:#BAB2B5;
+    line-height:45px ;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+#ProgressBar{
+    width:50px;
+    height:40px;
+    background:#AC3B61;
+    border-radius:3px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.SliderBar2{
+    width:60%;
+    margin: 24% auto;
+position: relative;
+}
+#slider2{
+    -webkit-appearance: none;
+    width:100%;
+    height:40px;
+    outline:none;
+    border-radius:3px;
+}
+#slider2::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:46px;
+    height:48px;
+    cursor:pointer;
+z-index:3;
+position:relative;
+}
+#selector2{
+    height:96px;
+    width:46px;
+    position:absolute;
+    bottom:0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
+.SelectBtn2{
+    height:48px;
+    width:46px;
+    background-image: url(../images/CatApp-Logo.png);
+    background-size: cover;
+    background-position:center;
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+}
+#SelectValue2{
+width:46px;
+height:48px;
+position: absolute;
+top:0;
+background:#420f3c ;
+border-radius: 2px;
+text-align: center;
+color:#BAB2B5;
+line-height:45px ;
+font-size: 20px;
+font-weight: bold;
+}
+#ProgressBar2{
+    width:50px;
+    height:40px;
+    background:#AC3B61;
+    border-radius:3px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.q2{
+    font-style: oblique;
+    border: 1px solid#BAB2B5 ;
+    background:#AC3B61 ;
+    text-shadow: teal;
+    text-align: center;
+    padding: 14px 16px;
+    position: absolute;
+    top:850px;
+    left:30%;  
+}
+.SliderBar3{
+    width:60%;
+    margin: 24% auto;
+position: relative;
+}
+#slider3{
+    -webkit-appearance: none;
+    width:100%;
+    height:40px;
+    outline:none;
+    border-radius:3px;
+}
+#slider3::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:46px;
+    height:48px;
+    cursor:pointer;
+z-index:3;
+position:relative;
+}
+#selector3{
+    height:96px;
+    width:46px;
+    position:absolute;
+    bottom:0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
+.SelectBtn3{
+    height:48px;
+    width:46px;
+    background-image: url(../images/CatApp-Logo.png);
+    background-size: cover;
+    background-position:center;
+    border-radius: 50%;
+    position:absolute;
+    bottom:0;
+}
+#SelectValue3{
+width:46px;
+height:48px;
+position: absolute;
+top:0;
+background:#420f3c ;
+border-radius: 2px;
+text-align: center;
+color:#BAB2B5;
+line-height:45px ;
+font-size: 20px;
+font-weight: bold;
+}
+#ProgressBar3{
+    width:50px;
+    height:40px;
+    background:#AC3B61;
+    border-radius:3px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.q3{
+    font-style: oblique;
+    border: 1px solid#BAB2B5 ;
+    background:#AC3B61 ;
+    text-shadow: teal;
+    text-align: center;
+    padding: 14px 16px;
+    position: absolute;
+    top:1350px;
+    left:30%;  
+}
+.input-group{
+    
+    margin: 50px 0px;
+}
+
+.input-group input{
+    height: 45px;
+    
+}
+
+.btn-add{
+
+    background-color: rgb(12, 163, 45);
+    color: white;
+    padding: 0px 63px;
+}
+
+.btn-remove{
+
+    background-color: rgb(197, 37, 37);
+    color: white;
+    padding: 0px 50px;
+}
+
+#dynamic-list{
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    
+}
+.changework li{
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color:
+    #BAB2B5;
+    border: 1px solid
+    rgba(0,0,0,.125);
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    
+}
+#changework td, #changework th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	}
+	  
+	#changework tr:nth-child(even){background-color: #f2f2f2;}
+	  
+	#changework tr:hover {background-color: #ddd;}
+	  
+	#changework th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #9f1d35;
+	color: white;
+	}

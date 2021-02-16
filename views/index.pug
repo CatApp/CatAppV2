@@ -1,65 +1,55 @@
 extends layout
+
 block layout-content
   div.View
-    h1.Banner CatApp
-    div.Message
-      div.Title
-        h3 H3
-        h1 H2
-      span.Details Span
+    div.Title
     div.NavButtons
       a(href="/studentinfo")
           div.NavButton Nav Button
+    head
+      div.navbar
+        div.pull-left
+          a(href="#")
+            image-responsive(img src="images/CatApp-Logo.PNG")
+        div.nav-left
+          ul
+            li 
+              a(href="/") CatApp
+            li  
+              a#therapistNameText TEST
+                  // Text to be changed by js depending on the person logged in
+        div.nav-right
+          ul
+            li  
+              a.searchBar
+                form
+                  input(type="text" placeholder="Search Students")
+                  button(type="submit" aria-hidden="true")
+                    i.fa.fa-search
+            li        
+              a.logoutLink(href="/login") Logout
     body
-      .container
-        header
-          .logo
-            // <img src="images/webLogo.svg" alt="" />
-          .therapistName
-            p#therapistNameText TEST
-            // Text to be changed by js depending on the person logged in
-          .searchBar
-            form
-              input(type="text" placeholder="Search Students")
-              button(type="submit" aria-hidden="true")
-                i.fa.fa-search
-          .logoutLink
-            ul
-              li
-                a(href="") Logout
-        nav.mainNav
-          .row
-            ul
-              li
-                a(href="TherapistHome.html") Home
-        .mainContent
+      div.container
+        div.mainContent
           main
-            .mainheading
+            div.mainheading
               h1
                 | Main Heading 
                 br
-                span#viewPortData
-            .strapline
-              .straplinetxt
-                p
-                  | Example Text
-                p
-                  | Maybe put a table here
-          .sideBar
-            h3 For Something?
-            ul
-              li
-                a(href="") Updates?
-              li
-                a(href="") Quick Access things
-            h3 News
-            ul
-              li
-                a(href="") Latest published stuff
-              li
-                a(href="") Archive released
-      footer
-        .row
+            div.studentTable
+              p
+                | Example Text
+              table#student
+                tbody
+                  tr
+                    th Student ID
+                    th Therapist ID
+                    th Username
+                    th Date Last Reviewed
+              script studentAdd()
+    footer
+      div.fcontainer
+        div.row
           address
             | 123 The High Street
             br
@@ -68,7 +58,7 @@ block layout-content
             |             Sheffield
             br
             |             S99 7ZZ
-          .footerSocialLinks
+        div.footerSocialLinks
             ul
               li
                 a(href="" aria-label="Twitter")
@@ -82,13 +72,13 @@ block layout-content
               li
                 a(href="" aria-label="YouTube")
                   i.fab.fa-youtube
-        .row
-          ul.footerLinks
-            li
-              a(href="") Terms and Conditions
-            li
-              a(href="") Accessibility
-            li
-              a(href="") Legal Information
-            li
-              a(href="") Privacy and GDPR
+        div.footerLinks
+            ul
+              li
+                a(href="") Terms and Conditions
+              li
+                a(href="") Accessibility
+              li
+                a(href="") Legal Information
+              li
+                a(href="") Privacy and GDPR
