@@ -16,6 +16,10 @@ module.exports = (app) => {
     myControllers.main(app, req, res);
   });
 
+  router.get("/studentinfo", (req, res) => {
+    myControllers.studentinfo(app, req, res);
+  });
+
   router.get("/viewAll", (req, res) => {
     myControllers.viewAll(app, req, res);
   });
