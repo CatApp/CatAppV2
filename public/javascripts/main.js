@@ -40,3 +40,18 @@ function openTab(evt, findTab) {
   document.getElementById(findTab).style.display = "block";
   evt.currentTarget.className += " active";
 }
+document.getElementById("defaultOpen").click();
+
+
+
+
+FilePond.setOptions({
+  server: {
+    url ='mongodb+srv://mjcAtlas01:Uy78Hq234$g@mycluster01.ica5f.azure.mongodb.net/test',
+      process: './process',
+      revert: './revert',
+      restore: './restore/',
+      load: './load/',
+      fetch: './fetch/'
+  }
+});

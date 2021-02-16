@@ -7,7 +7,8 @@ block layout-content
     head
      body
       .tab
-        button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+        //button.tablinks(onclick="openTab(event, 'Therapy')")id="defaultOpen" Therapy Maps
+        button#defaultOpen.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
         button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
       // Tab content
