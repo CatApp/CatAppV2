@@ -1,0 +1,192 @@
+/* CSS Document */
+.container{
+	max-width: 1366px;
+	/* 1366x768	16:9*/
+	margin:auto;
+
+	float: left;
+	
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+	background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+	background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+  }
+
+/* use a hand cursor intead of arrow for the action buttons */
+.filepond--file-action-button {
+    cursor: pointer;
+}
+/*.filepond--item-panel{
+	stylePanelLayout:circle;
+}*/
+.filepond--root {
+	max-height: 10em;
+	
+}
+/* the text color of the drop label*/
+.filepond--drop-label {
+    color: #BAB2B5;
+}
+
+/* underline color for "Browse" button */
+.filepond--label-action {
+    text-decoration-color: #BAB2B5;
+}
+
+/* the background color of the filepond drop area */
+.filepond--panel-root {
+    background-color: #BAB2B5;
+}
+
+/* the border radius of the drop area */
+.filepond--panel-root {
+    border-radius: 0.5em;
+}
+
+/* the border radius of the file item */
+.filepond--item-panel {
+    border-radius: 0.5em;
+}
+
+/* the background color of the file and file panel (used when dropping an image) */
+.filepond--item-panel {
+    background-color: #555;
+}
+
+/* the background color of the drop circle */
+.filepond--drip-blob {
+    background-color: #BAB2B5;
+}
+
+/* the background color of the black action buttons */
+.filepond--file-action-button {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* the icon color of the black action buttons */
+.filepond--file-action-button {
+    color: white;
+}
+
+/* the color of the focus ring */
+.filepond--file-action-button:hover,
+.filepond--file-action-button:focus {
+    box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.9);
+}
+
+/* the text color of the file status and info labels */
+.filepond--file {
+    color: white;
+}
+
+/* error state color */
+[data-filepond-item-state*='error'] .filepond--item-panel,
+[data-filepond-item-state*='invalid'] .filepond--item-panel {
+    background-color: red;
+}
+
+[data-filepond-item-state='processing-complete'] .filepond--item-panel {
+    background-color: green;
+}
+
+/* bordered drop area */
+.filepond--panel-root {
+    background-color: transparent;
+    border: 2px solid #2c3340;
+}
+header,
+.mainContent,
+.row {
+ max-width: 1200px;
+ padding: 0 5px;
+ margin: auto;
+}
+
+.banner{
+	background-image: url(../images/banner1-1366.jpg);
+	background-repeat: no-repeat;
+	height:200px;
+}
+.banner h2{
+	top:20px;
+	left:120px;
+	font-size: 8em;
+}
+.mainNav {
+	padding: 8px 0;
+	height: auto;
+}
+
+.mainNav .row ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.mainNav > div > ul > li {
+	border: none;
+	padding: 0;
+}
+
+.mainContent {
+	display: flex;
+}
+main {
+	flex-basis: 70%;
+}
+.sideBar {
+	background-color: #ddceaa;
+	flex-basis: 30%;
+}
+.newsItem{
+	flex-basis: 33%;
+}
+.strapline {
+	display: flex;
+}
+.straplinetxt,
+.straplineImg {
+	padding: 0 5px;
+	flex-basis: 50%;
+}
+.straplineImg > img {
+	width: 100%;
+}
+
+.burgerMenu {
+	display: none;
+}

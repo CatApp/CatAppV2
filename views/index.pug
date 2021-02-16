@@ -1,0 +1,94 @@
+extends layout
+block layout-content
+  div.View
+    h1.Banner CatApp
+    div.Message
+      div.Title
+        h3 H3
+        h1 H2
+      span.Details Span
+    div.NavButtons
+      a(href="/studentinfo")
+          div.NavButton Nav Button
+    body
+      .container
+        header
+          .logo
+            // <img src="images/webLogo.svg" alt="" />
+          .therapistName
+            p#therapistNameText TEST
+            // Text to be changed by js depending on the person logged in
+          .searchBar
+            form
+              input(type="text" placeholder="Search Students")
+              button(type="submit" aria-hidden="true")
+                i.fa.fa-search
+          .logoutLink
+            ul
+              li
+                a(href="") Logout
+        nav.mainNav
+          .row
+            ul
+              li
+                a(href="TherapistHome.html") Home
+        .mainContent
+          main
+            .mainheading
+              h1
+                | Main Heading 
+                br
+                span#viewPortData
+            .strapline
+              .straplinetxt
+                p
+                  | Example Text
+                p
+                  | Maybe put a table here
+          .sideBar
+            h3 For Something?
+            ul
+              li
+                a(href="") Updates?
+              li
+                a(href="") Quick Access things
+            h3 News
+            ul
+              li
+                a(href="") Latest published stuff
+              li
+                a(href="") Archive released
+      footer
+        .row
+          address
+            | 123 The High Street
+            br
+            |             Little SmallTown
+            br
+            |             Sheffield
+            br
+            |             S99 7ZZ
+          .footerSocialLinks
+            ul
+              li
+                a(href="" aria-label="Twitter")
+                  i.fab.fa-twitter
+              li
+                a(href="" aria-label="Facebook")
+                  i.fab.fa-facebook
+              li
+                a(href="" aria-label="Instagram")
+                  i.fab.fa-instagram
+              li
+                a(href="" aria-label="YouTube")
+                  i.fab.fa-youtube
+        .row
+          ul.footerLinks
+            li
+              a(href="") Terms and Conditions
+            li
+              a(href="") Accessibility
+            li
+              a(href="") Legal Information
+            li
+              a(href="") Privacy and GDPR

@@ -1,2 +1,2 @@
-# CatAppV2
-Version 2 CatApp
+# CatApp
+CatApp Web App

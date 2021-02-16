@@ -1,0 +1,46 @@
+
+
+label{
+    display: block;
+}
+
+/* input gender {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+} */
+
+.form {
+    width: 100%;
+}
+
+form > div {
+    margin: 10px 0;
+}
+
+.inlineLabels > label{
+    display: inline;
+}
+
+.details input{
+    width:50%;
+}
+
+.marketing label{
+    margin-bottom: 5px;
+}
+
+.marketing select{
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+textarea{
+    width: 100%;
+}
+
+fieldset{
+    margin-bottom: 5px;
+}

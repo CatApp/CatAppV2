@@ -1,0 +1,58 @@
+extends layout
+block layout-content
+  div.View.StudentInfoView
+    h1.Banner Hello #{studentProfile.nickname}!
+    div.Message
+      div.Title Student Information
+    head
+     body
+      .tab
+        button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+        button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
+        button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
+      // Tab content
+      #Therapy.tabcontent
+        h3 Therapy Maps
+        p therapy section.
+      #RecognitionandRevision.tabcontent
+        h3 Recognition
+        p This the recognition and revision section
+      #Changework.tabcontent
+        h3 Changework
+        p Changework section
+    footer
+    .row
+      address
+        | 123 The High Street
+        br
+        |         Little SmallTown
+        br
+        |         Sheffield
+        br
+        |         S99 7ZZ
+      .footerSocialLinks
+        ul
+          li
+            a(href="" aria-label="Twitter")
+              i.fab.fa-twitter
+          li
+            a(href="" aria-label="Facebook")
+              i.fab.fa-facebook
+          li
+            a(href="" aria-label="Instagram")
+              i.fab.fa-instagram
+          li
+            a(href="" aria-label="YouTube")
+              i.fab.fa-youtube
+    .row
+      ul.footerLinks
+        li
+          a(href="") Terms and Conditions
+        li
+          a(href="") Accessibility
+        li
+          a(href="") Legal Information
+        li
+          a(href="") Privacy and GDPR
+  // Javascript links here
+ 
