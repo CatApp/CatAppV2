@@ -1,89 +1,88 @@
 extends layout
-
 block layout-content
   div.View.StudentInfoView
     h1.Banner Hello #{studentProfile.nickname}!
     div.Message
       div.Title Student Information
     head
+     body
       .tab
-        //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
         button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
-    body
       // Tab content
       #Therapy.tabcontent
         h3 Therapy Maps
         p therapy section, here you can upload any visualisations you might have done recently.
-        console.log('tab content')
-        div.filepond
-          console.log('FILEPOND')
-          input(type="file" multiple="")
-          script.
-            FilePond.registerPlugin(
-            FilePondPluginImagePreview,
-            FilePondPluginImageResize,
-            FilePondPluginImageTransform
-          );
-          const inputElement = document.querySelector('input[type="file"]');
-          const pond = FilePond.create(inputElement,{
-          imageResizeTargetWidth:256,
-          imageResizeTargetHeight:50,
-          //callback
-          });
-        .Uploadbtn
-          button(type="submit") Upload
       #RecognitionandRevision.tabcontent
         h3 Recognition
         p This the recognition and revision section
-        
-            .results
-              canvas#recognitionCanvas
+        .q1
+          p1 On a scale 0-100, 100 being very happy and 0 being very sad, how do you feel?
+        .SliderBar
+          input#slider(type='range' min='0' max='100' value='50')
+          #selector
+            .SelectBtn
+            #SelectValue
+          #ProgressBar
+        .q2
+          p1
+            | On a scale from 0-100, 100 being very calm and 0 being very anxious, how do you feel?
+        .SliderBar2
+          input#slider2(type='range' min='0' max='100' value='50')
+          #selector2
+            .SelectBtn2
+            #SelectValue2
+          #ProgressBar2
+        .q3
+          p1
+            | On a scale from 0-100, 100 being very excited and 0 being very bored, how do you feel?
+        .SliderBar3
+          input#slider3(type='range' min='0' max='100' value='50')
+          #selector3
+            .SelectBtn3
+            #SelectValue3
+          #ProgressBar3
+        script.
+          var slider=document.getElementById("slider");
+          var selector=document.getElementById("selector");
+          var ProgressBar= document.getElementById("ProgressBar");
+          SelectValue.innerHTML = slider.value;
+          var slider2=document.getElementById("slider2");
+          var selector2=document.getElementById("selector2");
+          var ProgressBar2= document.getElementById("ProgressBar2");
+          SelectValue2.innerHTML = slider2.value;
+          var slider3=document.getElementById("slider3");
+          var selector3=document.getElementById("selector3");
+          var ProgressBar3= document.getElementById("ProgressBar3");
+          SelectValue3.innerHTML = slider3.value;
+          slider.oninput=function()
+          {
+          SelectValue.innerHTML = this.value;
+          selector.style.left =this.value+ "%";
+          ProgressBar.style.width =this.value+ "%";
+          }
+          slider2.oninput = function(){
+          SelectValue2.innerHTML = this.value;
+          selector2.style.left =this.value+"%";
+          ProgressBar2.style.width =this.value+ "%";
+          }
+          slider3.oninput = function(){
+          SelectValue3.innerHTML = this.value;
+          selector3.style.left =this.value+"%";
+          ProgressBar3.style.width =this.value+ "%";
+          }
 
-     #Changework.tabcontent
-        div.changeworkTable
-              p
-                | Example Text
-              table#changework
-                tbody
-                  tr
-                    th Student ID
-                    th Things that help them 
-                    th Latest submission
-              script changeworkAdd()
-    footer
-      div.fcontainer
-        div.row
-          address
-            | 123 The High Street
-            br
-            |             Little SmallTown
-            br
-            |             Sheffield
-            br
-            |             S99 7ZZ
-        div.footerSocialLinks
-            ul
-              li
-                a(href="" aria-label="Twitter")
-                  i.fab.fa-twitter
-              li
-                a(href="" aria-label="Facebook")
-                  i.fab.fa-facebook
-              li
-                a(href="" aria-label="Instagram")
-                  i.fab.fa-instagram
-              li
-                a(href="" aria-label="YouTube")
-                  i.fab.fa-youtube
-        div.footerLinks
-            ul
-              li
-                a(href="") Terms and Conditions
-              li
-                a(href="") Accessibility
-              li
-                a(href="") Legal Information
-              li
-                a(href="") Privacy and GDPR
+      #Changework.tabcontent
+       .overall-changework  
+          .overall-changework
+            .container-changework
+              .row-changework
+                .col-12
+                  .input-group
+                    input#helpfulThing.form-control(type='text', required='')                                 
+                    .input-group-append
+                      button.btn.btn-add(onclick='addItem()', type='button') Add something that helps you
+                      button.btn.btn-remove(onclick='removeItem()', type='button') Remove something that helps you
+                                   
+                    ul#dynamic-list
