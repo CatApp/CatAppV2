@@ -22,13 +22,13 @@ module.exports = {
       });
   },
 
-  /*main: function (app, req, res) {
+  login: function (app, req, res) {
 
-    return res.render("studentinfo", {
+    return res.render("login", {
       title: "Welcome",
       message: "Demo Node Site."
     });
-  },*/
+  },
 
   studentinfo: function (app, req, res) {
     console.info("Student Info");

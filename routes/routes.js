@@ -12,8 +12,8 @@ module.exports = (app) => {
     myControllers.index(app, req, res);
   });
 
-  router.get("/main", (req, res) => {
-    myControllers.main(app, req, res);
+  router.get("/login", (req, res) => {
+    myControllers.login(app, req, res);
   });
 
   router.get("/studentinfo", (req, res) => {
