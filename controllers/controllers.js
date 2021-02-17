@@ -23,7 +23,7 @@ module.exports = {
     console.info("Student Info");
     return res.render("studentinfo", {
       title: "Student Info",
-      message: "Student Info Page",
+      //message: "Student Info Page",
     });
   },
 
