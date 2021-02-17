@@ -2,46 +2,29 @@ extends layout
 
 block layout-content
   div.View.StudentInfoView
-    h1.Banner Hello #{studentProfile.nickname}!
+    h1.Banner Hello
     div.Message
       div.Title Student Information
-    head
-      .tab
-        //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
-        button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
-        button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
-        button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
-    body
+  head
+    .tab
+      //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+      button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+      button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
+      button.tablinks(onclick="openTab(event, 'Changework')") Change-Work  
+  body
       // Tab content
       #Therapy.tabcontent
         h3 Therapy Maps
         p therapy section, here you can upload any visualisations you might have done recently.
         console.log('tab content')
-        div.filepond
-          console.log('FILEPOND')
-          input(type="file" multiple="")
-          script.
-            FilePond.registerPlugin(
-            FilePondPluginImagePreview,
-            FilePondPluginImageResize,
-            FilePondPluginImageTransform
-          );
-          const inputElement = document.querySelector('input[type="file"]');
-          const pond = FilePond.create(inputElement,{
-          imageResizeTargetWidth:256,
-          imageResizeTargetHeight:50,
-          //callback
-          });
-        .Uploadbtn
-          button(type="submit") Upload
+        
       #RecognitionandRevision.tabcontent
         h3 Recognition
         p This the recognition and revision section
-        
             .results
               canvas#recognitionCanvas
 
-     #Changework.tabcontent
+      #Changework.tabcontent
         div.changeworkTable
               p
                 | Example Text
@@ -52,38 +35,4 @@ block layout-content
                     th Things that help them 
                     th Latest submission
               script changeworkAdd()
-    footer
-      div.fcontainer
-        div.row
-          address
-            | 123 The High Street
-            br
-            |             Little SmallTown
-            br
-            |             Sheffield
-            br
-            |             S99 7ZZ
-        div.footerSocialLinks
-            ul
-              li
-                a(href="" aria-label="Twitter")
-                  i.fab.fa-twitter
-              li
-                a(href="" aria-label="Facebook")
-                  i.fab.fa-facebook
-              li
-                a(href="" aria-label="Instagram")
-                  i.fab.fa-instagram
-              li
-                a(href="" aria-label="YouTube")
-                  i.fab.fa-youtube
-        div.footerLinks
-            ul
-              li
-                a(href="") Terms and Conditions
-              li
-                a(href="") Accessibility
-              li
-                a(href="") Legal Information
-              li
-                a(href="") Privacy and GDPR
+              
