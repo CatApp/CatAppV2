@@ -22,19 +22,19 @@ module.exports = {
       });
   },
 
-  main: function (app, req, res) {
+  /*main: function (app, req, res) {
 
     return res.render("studentinfo", {
       title: "Welcome",
       message: "Demo Node Site."
     });
-  },
+  },*/
 
   studentinfo: function (app, req, res) {
     console.info("Student Info");
     return res.render("studentinfo", {
-      title: "Welcome",
-      message: "Demo Node Site."
+      title: "Student Info",
+      //message: "Student Info Page",
     });
   },
 
