@@ -5,10 +5,21 @@ var ObjectId = require("mongodb").ObjectId;
 
 module.exports = {
   index: function (app, req, res) {
-    return res.render("index", {
-      title: "Welcome",
-      message: "Demo Node Site."
-    });
+    console.info("Index Controller");
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({})
+      .toArray(function (err, docs) {
+        console.dir(docs)
+        if (err) {
+          console.error(err);
+        }
+        return res.render("index", {
+          title: "Students Table",
+          Students: docs
+        });
+      });
   },
 
   main: function (app, req, res) {
@@ -31,7 +42,7 @@ module.exports = {
     console.info("View All controller");
     app
       .set("myDb")
-      .collection("filmsCollection")
+      .collection("Students")
       .find({})
       .toArray(function (err, docs) {
         console.dir(docs)
@@ -39,8 +50,8 @@ module.exports = {
           console.error(err);
         }
         return res.render("viewAll", {
-          title: "All Films",
-          films: docs
+          title: "All Students",
+          Students: docs
         });
       });
   },

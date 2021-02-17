@@ -42,11 +42,11 @@ var MongoClient = require('mongodb').MongoClient
 //mongodb://localhost:27017
 //mongodb+srv://admin:CyyuBE7j1c8BlVx2@cluster0.wbsei.mongodb.net/test
 //mongodb+srv://Admin:$HU3002943@budgetapp.qombv.mongodb.net/test?retryWrites=true&w=majority
-const uri = "mongodb+srv://mjcAtlas01:Uy78Hq234$g@mycluster01.ica5f.azure.mongodb.net/test";
+const uri = "mongodb+srv://admin:CyyuBE7j1c8BlVx2@cluster0.wbsei.mongodb.net/CatApp?retryWrites=true&w=majority"
 
 MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, client) {
 
-  app.set('myDb', client.db('myMoviesDb'));
+  app.set('myDb', client.db('CatApp'));
 
 })
 

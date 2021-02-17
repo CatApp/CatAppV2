@@ -41,12 +41,17 @@ block layout-content
                 | Example Text
               table#student
                 tbody
+                  th="SID"
+                  th="Fname"
+                  th="Lname"
+                  th="TID"
                   tr
-                    th Student ID
-                    th Therapist ID
-                    th Username
-                    th Date Last Reviewed
-              script studentAdd()
+                  each Student in Students
+                    td=Student.SID
+                    td=Student.Fname
+                    td=Student.Lname
+                    td=Student.TID
+                    tr
     footer
       div.fcontainer
         div.row
