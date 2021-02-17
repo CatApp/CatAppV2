@@ -45,17 +45,20 @@ block layout-content
                   th="Fname"
                   th="Lname"
                   th="TID"
-                  tr
+                  script.
+                    var sClicked = 0;
                   each Student in Students
+                    tr
                     td
                       a(href="//www.test.com/")=Student.SID
                     td
                       a(href="//www.test.com/")=Student.Fname
+                      script.
+                        sClicked=Student.SID;
                     td
                       a(href="//www.test.com/")=Student.Lname
                     td
                       a(href="//www.test.com/")=Student.TID
-                    tr
     footer
       div.fcontainer
         div.row
