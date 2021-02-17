@@ -47,10 +47,14 @@ block layout-content
                   th="TID"
                   tr
                   each Student in Students
-                    td=Student.SID
-                    td=Student.Fname
-                    td=Student.Lname
-                    td=Student.TID
+                    td
+                      a(href="//www.test.com/")=Student.SID
+                    td
+                      a(href="//www.test.com/")=Student.Fname
+                    td
+                      a(href="//www.test.com/")=Student.Lname
+                    td
+                      a(href="//www.test.com/")=Student.TID
                     tr
     footer
       div.fcontainer
