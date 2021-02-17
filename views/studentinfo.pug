@@ -15,6 +15,31 @@ block layout-content
       #Therapy.tabcontent
         h3 Therapy Maps
         p therapy section, here you can upload any visualisations you might have done recently.
+         div.filepond
+          input(type="file" multiple="")
+          script.
+            FilePond.registerPlugin(
+            FilePondPluginImagePreview,
+            FilePondPluginImageResize,
+            FilePondPluginImageTransform
+            );
+            const inputElement = document.querySelector('input[type="file"]');
+            const pond = FilePond.create(inputElement,{
+            imageResizeTargetWidth:256,
+            imageResizeTargetHeight:50,
+            //callback
+            onaddfile:(err,fileItem)=>{
+            console.log(err,fileItem.getMetadata('resize'))
+            },
+            /* onpreparefile:(fileItem,output)=>{
+            //const img
+            const img= new Image();
+            img.src = URL.createObjectURL(output);
+            document.body.appendChild(img);
+            }*/
+            });
+          .Uploadbtn
+            button(type="submit") Upload
         console.log('tab content')
         
       #RecognitionandRevision.tabcontent
