@@ -45,16 +45,12 @@ block layout-content
                   th="Fname"
                   th="Lname"
                   th="TID"
-                  script.
-                    var sClicked = 0;
                   each Student in Students
                     tr
                     td
-                      a(href="//www.test.com/")=Student.SID
+                      a(href="/oneStudent/:Student.SID")=Student.SID
                     td
                       a(href="//www.test.com/")=Student.Fname
-                      script.
-                        sClicked=Student.SID;
                     td
                       a(href="//www.test.com/")=Student.Lname
                     td
