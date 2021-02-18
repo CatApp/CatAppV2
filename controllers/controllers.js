@@ -88,7 +88,7 @@ module.exports = {
       });
   },
 
-  oneStudent: function (app, req, res, view, viewTitle) {
+  oneStudent: function (app, req, res) {
     console.info("One student controller");
     let SID = req.params.SID;
     var o_id = new ObjectId(SID);
@@ -103,9 +103,9 @@ module.exports = {
           console.error(err);
         }
         console.dir(docs);//docs is empty here, leading to an error 2 lines down (89)
-        return res.render(view, {
-          //title: `${viewTitle} ${docs[0].SID}`,
-          Students: docs[0],
+        return res.render("oneStudent", {
+          //title: `${docs[0].SID}`,
+          Student: docs[0]
           //login: req.session.login,
           });
       });

@@ -4,95 +4,102 @@ block layout-content
     h1.Banner Hello
     div.Message
       div.Title Student Information
-    head
-      .tab
-        //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
-        button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
-        button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
-        button.tablinks(onclick="openTab(event, 'Changework')") Change-Work  
-    body
-        // Tab content
-        #Therapy.tabcontent
-          h3 Therapy Maps
-          p therapy section, here you can upload any visualisations you might have done recently.
-            div.filepond
-            input(type="file" multiple="")
-            script.
-              FilePond.registerPlugin(
-              FilePondPluginImagePreview,
-              FilePondPluginImageResize,
-              FilePondPluginImageTransform
-              );
-              const inputElement = document.querySelector('input[type="file"]');
-              const pond = FilePond.create(inputElement,{
-              imageResizeTargetWidth:256,
-              imageResizeTargetHeight:50,
-              //callback
-              onaddfile:(err,fileItem)=>{
-              console.log(err,fileItem.getMetadata('resize'))
-              },
-              /* onpreparefile:(fileItem,output)=>{
-              //const img
-              const img= new Image();
-              img.src = URL.createObjectURL(output);
-              document.body.appendChild(img);
-              }*/
-              });
-            .Uploadbtn
-              button(type="submit") Upload
-          console.log('tab content')
+  head
+    .tab
+      //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+      button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+      button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
+      button.tablinks(onclick="openTab(event, 'Changework')") Change-Work  
+  body
+      // Tab content
+      #Therapy.tabcontent
+        h3 Therapy Maps
+        p therapy section, here you can upload any visualisations you might have done recently.
+         div.filepond
+          input(type="file" multiple="")
+          script.
+            FilePond.registerPlugin(
+            FilePondPluginImagePreview,
+            FilePondPluginImageResize,
+            FilePondPluginImageTransform
+            );
+            const inputElement = document.querySelector('input[type="file"]');
+            const pond = FilePond.create(inputElement,{
+            imageResizeTargetWidth:256,
+            imageResizeTargetHeight:50,
+            //callback
+            onaddfile:(err,fileItem)=>{
+            console.log(err,fileItem.getMetadata('resize'))
+            },
+            /* onpreparefile:(fileItem,output)=>{
+            //const img
+            const img= new Image();
+            img.src = URL.createObjectURL(output);
+            document.body.appendChild(img);
+            }*/
+            });
+          .Uploadbtn
+            button(type="submit") Upload
+        console.log('tab content')
+        
+      #RecognitionandRevision.tabcontent
+        form(action="/recognition" method="POST")
+          input(type="text" name="client" placeholder="client" required="")
+          br
+          input(type="text" name="target problem1" placeholder="target problem one" required="")
+          br
+          input(type="radio" id="slider-bar" name="choice" value="slider-bar") 
+          label(for="slider-bar")  Click above to generate a SliderBar on student's side
+          br
+          input(type="radio" id="textbox" name="choice" value="textbox") 
           
-        #RecognitionandRevision.tabcontent
-          h3 Recognition
-          p This the recognition and revision section
-              .results
-                canvas#recognitionCanvas
-
-        #Changework.tabcontent
-          div.changeworkTable
-                p
-                  | Example Text
-                table#changework
-                  tbody
-                    tr
-                      th Student ID
-                      th Things that help them 
-                      th Latest submission
-                script changeworkAdd()
-    footer
-        div.fcontainer
-          div.row
-            address
-              | 123 The High Street
-              br
-              |             Little SmallTown
-              br
-              |             Sheffield
-              br
-              |             S99 7ZZ
-          div.footerSocialLinks
-              ul
-                li
-                  a(href="" aria-label="Twitter")
-                    i.fab.fa-twitter
-                li
-                  a(href="" aria-label="Facebook")
-                    i.fab.fa-facebook
-                li
-                  a(href="" aria-label="Instagram")
-                    i.fab.fa-instagram
-                li
-                  a(href="" aria-label="YouTube")
-                    i.fab.fa-youtube
-          div.footerLinks
-              ul
-                li
-                  a(href="") Terms and Conditions
-                li
-                  a(href="") Accessibility
-                li
-                  a(href="") Legal Information
-                li
-                  a(href="") Privacy and GDPR
-
+          label(for="textbox") Click above to generate a Textbox on student's side
+          br
+          input(type="text" name="target problem1 pattern (optional)" placeholder="target problem one pattern (optional)" required="")
+          br
+          input(type="text" name="target problem2" placeholder="target problem two" required="")
+          br
+          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+          label(for="slider-bar") Click above to generate a SliderBar on student's side
+          br
+          input(type="radio" id="textbox" name="choice" value="textbox")
+          label(for="textbox") Click above to generate a Textbox on student's side
+          br
+          input(type="text" name="target problem2 pattern (optional)" placeholder="target problem two pattern (optional)" required="")
+          br
+          input(type="text" name="target problem3" placeholder="target problem three" required="")
+          br
+          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+          label(for="slider-bar") Click above to generate a SliderBar on student's side
+          br
+          input(type="radio" id="textbox" name="choice" value="textbox")
+          label(for="textbox") Click above to generate  a Textbox on student's side
+          br
+          input(type="text" name="target problem3 pattern (optional)" placeholder="target problem three pattern (optional)" required="")
+          br
+          input(type="text" name="target problem4" placeholder="target problem four" required="")
+          br
+          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+          label(for="slider-bar") Click above to generate a SliderBar on student's side
+          br
+          input(type="radio" id="textbox" name="choice" value="textbox")
+          label(for="textbox") Click above to generate a TextBox on student's side
+          br
+          input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
+          br
+        input(type="submit")
+        .script 
+          console.info("submitted") 
+      #Changework.tabcontent
+        div.changeworkTable
+              p
+                | Example Text
+              table#changework
+                tbody
+                  tr
+                    th Student ID
+                    th Things that help them 
+                    th Latest submission
+              script changeworkAdd()
               
+

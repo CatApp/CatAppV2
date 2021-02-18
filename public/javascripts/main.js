@@ -233,3 +233,5 @@ var myBarchart = new Barchart(
         colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
     }
 );
+
+
