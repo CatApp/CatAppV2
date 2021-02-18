@@ -7,9 +7,11 @@ block layout-content
   head
     .tab
       //button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+      button.tablinks(onclick="openTab(event, 'Home')") Home
       button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
       button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
-      button.tablinks(onclick="openTab(event, 'Changework')") Change-Work  
+      button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
+      button.tablinks(onclick="openTab(event, 'AddClient')") Add Client Form 
   body
       // Tab content
       #Therapy.tabcontent
@@ -43,53 +45,8 @@ block layout-content
         console.log('tab content')
         
       #RecognitionandRevision.tabcontent
-        form(action="/recognition" method="POST")
-          input(type="text" name="client" placeholder="client" required="")
-          br
-          input(type="text" name="target problem1" placeholder="target problem one" required="")
-          br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar") 
-          label(for="slider-bar")  Click above to generate a SliderBar on student's side
-          br
-          input(type="radio" id="textbox" name="choice" value="textbox") 
-          
-          label(for="textbox") Click above to generate a Textbox on student's side
-          br
-          input(type="text" name="target problem1 pattern (optional)" placeholder="target problem one pattern (optional)" required="")
-          br
-          input(type="text" name="target problem2" placeholder="target problem two" required="")
-          br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
-          label(for="slider-bar") Click above to generate a SliderBar on student's side
-          br
-          input(type="radio" id="textbox" name="choice" value="textbox")
-          label(for="textbox") Click above to generate a Textbox on student's side
-          br
-          input(type="text" name="target problem2 pattern (optional)" placeholder="target problem two pattern (optional)" required="")
-          br
-          input(type="text" name="target problem3" placeholder="target problem three" required="")
-          br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
-          label(for="slider-bar") Click above to generate a SliderBar on student's side
-          br
-          input(type="radio" id="textbox" name="choice" value="textbox")
-          label(for="textbox") Click above to generate  a Textbox on student's side
-          br
-          input(type="text" name="target problem3 pattern (optional)" placeholder="target problem three pattern (optional)" required="")
-          br
-          input(type="text" name="target problem4" placeholder="target problem four" required="")
-          br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
-          label(for="slider-bar") Click above to generate a SliderBar on student's side
-          br
-          input(type="radio" id="textbox" name="choice" value="textbox")
-          label(for="textbox") Click above to generate a TextBox on student's side
-          br
-          input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
-          br
-        input(type="submit")
-        .script 
-          console.info("submitted") 
+        h3 Recognition
+        p This the recognition and revision section
       #Changework.tabcontent
         div.changeworkTable
               p
@@ -101,5 +58,56 @@ block layout-content
                     th Things that help them 
                     th Latest submission
               script changeworkAdd()
+      
+      #AddClient.tabcontent
+        h3 Add Client Questions
+        p Please Enter a problem area and question to push to the students application
+        div.addclientform
+          form(action="/recognition" method="POST")
+            input(type="text" name="client" placeholder="Client Name" required="")
+            br
+            input(type="text" name="target problem1" placeholder="Target Problem" required="")
+            br
+            input(type="radio" id="slider-bar" name="choice" value="slider-bar") 
+            label(for="slider-bar")  Click above to generate a SliderBar on student's side
+            br
+            input(type="radio" id="textbox" name="choice" value="textbox") 
+            label(for="textbox") Click above to generate a Textbox on student's side
+            br
+            input(type="text" name="target problem1 pattern (optional)" placeholder="Target Problem: Question One" required="")
+            br
+            input(type="text" name="target problem2" placeholder="target problem two" required="")
+            br
+            input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+            label(for="slider-bar") Click above to generate a SliderBar on student's side
+            br
+            input(type="radio" id="textbox" name="choice" value="textbox")
+            label(for="textbox") Click above to generate a Textbox on student's side
+            br
+            input(type="text" name="target problem2 pattern (optional)" placeholder="target problem two pattern (optional)" required="")
+            br
+            input(type="text" name="target problem3" placeholder="target problem three" required="")
+            br
+            input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+            label(for="slider-bar") Click above to generate a SliderBar on student's side
+            br
+            input(type="radio" id="textbox" name="choice" value="textbox")
+            label(for="textbox") Click above to generate  a Textbox on student's side
+            br
+            input(type="text" name="target problem3 pattern (optional)" placeholder="target problem three pattern (optional)" required="")
+            br
+            input(type="text" name="target problem4" placeholder="target problem four" required="")
+            br
+            input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+            label(for="slider-bar") Click above to generate a SliderBar on student's side
+            br
+            input(type="radio" id="textbox" name="choice" value="textbox")
+            label(for="textbox") Click above to generate a TextBox on student's side
+            br
+            input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
+            br
+            input(type="submit")
+            .script 
+              console.info("submitted") 
               
 
