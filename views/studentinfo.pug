@@ -43,7 +43,7 @@ block layout-content
         console.log('tab content')
         
       #RecognitionandRevision.tabcontent
-        form(action="auth" method="POST")
+        form(action="recognition" method="POST")
         input(type="text" name="client" placeholder="client" required="")
         <br>
         input(type="text" name="target problem1" placeholder="target problem one" required="")
@@ -79,6 +79,8 @@ block layout-content
         input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
         <br>
         input(type="submit")
+        .script 
+          console.info("submitted") 
       #Changework.tabcontent
         div.changeworkTable
               p

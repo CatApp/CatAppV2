@@ -56,3 +56,22 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
+
+var express = require('express');
+var path= require('path');
+var mongodb = require('mongodb');
+const uri = "mongodb+srv://admin:CyyuBE7j1c8BlVx2@cluster0.wbsei.mongodb.net/CatApp?retryWrites=true&w=majority"
+
+var dbConn = mongodb.MongoClient.connect(uri);
+
+var app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.resolve(__dirname, 'public')));
+app.post('TherapistRecognitions', function (req, res) {
+  dbConn.then(function(db) {
+      delete req.body._id; // for safety reasons
+      db.collection('TherapistRecognitions').insertOne(req.body);
+  });    
+  //res.send('Data received:\n' + JSON.stringify(req.body));
+});
