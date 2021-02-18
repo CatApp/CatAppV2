@@ -2,21 +2,16 @@ extends layout
 
 block layout-content
   div.View
-    div.Title
-    div.NavButtons
-      a(href="/studentinfo")
-          div.NavButton Nav Button
     head
       div.navbar
         div.pull-left
-          a(href="#")
             img(src="./images/CatApp-Logo.png" id="logo")
+            span CatApp
+            
         div.nav-left
           ul
-            li 
-              a(href="/") CatApp
             li  
-              a#therapistNameText TEST
+              a#therapistNameText Name
                   // Text to be changed by js depending on the person logged in
         div.nav-right
           ul
@@ -25,7 +20,7 @@ block layout-content
                 form
                   input(type="text" placeholder="Search Students")
                   button(type="submit" aria-hidden="true")
-                    i.fa.fa-search
+                    i.fas.fa-search
             li        
               a.logoutLink(href="/login") Logout
     body
