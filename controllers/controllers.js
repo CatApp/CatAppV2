@@ -94,6 +94,14 @@ module.exports = {
           });
       });
   },
+
+  studentHome: function (app, req, res) {
+    console.info("Student Home");
+    return res.render("studentHome", {
+      title: "Welcome",
+      message: "Demo Node Site."
+    });
+  },
 }
 /*studentinfo: function (app, req, res) {
     console.info("Student Info");
