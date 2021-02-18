@@ -88,7 +88,7 @@ module.exports = {
         }
         console.dir(docs);
         return res.render("studentinfo", {
-          title: `${docs[0].SID}`,
+          title: `${docs[0].Lname}`,
           Student: docs[0]
           //login: req.session.login,
           });
