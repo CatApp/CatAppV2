@@ -316,6 +316,10 @@ img{
     background-color: #ccc;
 }
 
+.tabstudent button:hover,.tabstudent button:active{
+    transform: scale(1.2,1.2);
+}
+
 /* Style the tab content */
 .tabcontent {
     display: none;
