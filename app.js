@@ -61,17 +61,22 @@ module.exports = app;
 var express = require('express');
 var path= require('path');
 var mongodb = require('mongodb');
-const uri = "mongodb+srv://admin:CyyuBE7j1c8BlVx2@cluster0.wbsei.mongodb.net/CatApp?retryWrites=true&w=majority"
 
-var dbConn = mongodb.MongoClient.connect(uri);
-
-var app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.resolve(__dirname, 'public')));
-app.post('TherapistRecognitions', function (req, res) {
-  dbConn.then(function(db) {
+var dbConn = mongodb.MongoClient.connect(uri,{useNewUrlParser:true});
+dbConn.then(function(client) {
+  app.post('/recognition', function (req, res) {
       delete req.body._id; // for safety reasons
-      db.collection('TherapistRecognitions').insertOne(req.body);
-  });    
-  //res.send('Data received:\n' + JSON.stringify(req.body));
+      client.db("CatApp").collections("TherapistRecognitions").insertOne(req.body);
+      console.log('test');
+  });
+})
+.catch(function(err){
+  console.log(err)
+});
+app.get('/view-TherapistRecognitions',  function(req, res) {
+  dbConn.then(function(db) {
+      db.collection('TherapistRecognitions').find({}).toArray().then(function(feedbacks) {
+          res.status(200).json(feedbacks);
+      });
+  });
 });
