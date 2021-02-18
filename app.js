@@ -58,25 +58,29 @@ app.listen(port, () => {
 module.exports = app;
 
 
+
 var express = require('express');
 var path= require('path');
 var mongodb = require('mongodb');
+var myObject = {
+  Test:"Test"
 
-var dbConn = mongodb.MongoClient.connect(uri,{useNewUrlParser:true});
+}
+var dbConn = mongodb.MongoClient.connect(uri);
 dbConn.then(function(client) {
-  app.post('/recognition', function (req, res) {
+  app.post('/recognitionData', function (req, res) {
       delete req.body._id; // for safety reasons
-      client.db("CatApp").collections("TherapistRecognitions").insertOne(req.body);
+      client.db("CatApp").collections("TherapistRecognitions").insertOne(myObject);
       console.log('test');
   });
 })
 .catch(function(err){
   console.log(err)
 });
-app.get('/view-TherapistRecognitions',  function(req, res) {
+/*app.get('/view-TherapistRecognitions',  function(req, res) {
   dbConn.then(function(db) {
       db.collection('TherapistRecognitions').find({}).toArray().then(function(feedbacks) {
           res.status(200).json(feedbacks);
       });
   });
-});
+});*/

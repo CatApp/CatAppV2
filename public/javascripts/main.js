@@ -100,14 +100,14 @@ function changeworkAdd() {
   }
 
   // Append product to the table
-  console.log("hitting here");
+  //console.log("hitting here");
   $("#changework tbody").append("<tr>" +
       "<td>3</td>" +
       "<td>Visualisations</td>" +
       "<td>15/02/2021</td>"+
       "</tr>");  
 }
-var recognitionCanvas = document.getElementById("recognitionCanvas");
+/*var recognitionCanvas = document.getElementById("recognitionCanvas");
 recognitionCanvas.width = 300;
 recognitionCanvas.height = 300;
    
@@ -233,5 +233,6 @@ var myBarchart = new Barchart(
         colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
     }
 );
+*/
 
 

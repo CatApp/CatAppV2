@@ -102,9 +102,9 @@ module.exports = {
         if (err) {
           console.error(err);
         }
-        console.dir(docs);//docs is empty here, leading to an error 2 lines down (89)
+        console.dir(docs);
         return res.render("oneStudent", {
-          //title: `${docs[0].SID}`,
+          title: `${docs[0].SID}`,
           Student: docs[0]
           //login: req.session.login,
           });
