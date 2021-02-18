@@ -43,13 +43,13 @@ block layout-content
                   each Student in Students
                     tr
                     td
-                      a(href=`oneStudent/${Student._id}`)=Student.SID
+                      a(href=`studentinfo/${Student._id}`)=Student.SID
                     td
-                      a(href=`oneStudent/${Student._id}`)=Student.Fname
+                      a(href=`studentinfo/${Student._id}`)=Student.Fname
                     td
-                      a(href=`oneStudent/${Student._id}`)=Student.Lname
+                      a(href=`studentinfo/${Student._id}`)=Student.Lname
                     td
-                      a(href=`oneStudent/${Student._id}`)=Student.TID
+                      a(href=`studentinfo/${Student._id}`)=Student.TID
     footer
       div.fcontainer
         div.row

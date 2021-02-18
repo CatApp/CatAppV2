@@ -40,6 +40,7 @@ module.exports = {
     });
   },
 
+<<<<<<< Updated upstream
   studentinfo: function (app, req, res) {
     console.info("Student Info");
     return res.render("studentinfo", {
@@ -56,6 +57,8 @@ module.exports = {
     });
   },
 
+=======
+>>>>>>> Stashed changes
   viewAll: function (app, req, res) {
     console.info("View All controller");
     app
@@ -88,8 +91,8 @@ module.exports = {
       });
   },
 
-  oneStudent: function (app, req, res) {
-    console.info("One student controller");
+  studentinfo: function (app, req, res) {
+    console.info("Student info controller");
     let SID = req.params.SID;
     var o_id = new ObjectId(SID);
 
@@ -103,7 +106,7 @@ module.exports = {
           console.error(err);
         }
         console.dir(docs);
-        return res.render("oneStudent", {
+        return res.render("studentinfo", {
           title: `${docs[0].SID}`,
           Student: docs[0]
           //login: req.session.login,
@@ -111,6 +114,14 @@ module.exports = {
       });
   },
 }
+/*studentinfo: function (app, req, res) {
+    console.info("Student Info");
+    return res.render("studentinfo", {
+      title: "Student Info",
+      //message: "Student Info Page",
+    });
+  },*/
+
   /*getItem: function (app, req, res, view, viewTitle) {
     console.info("Get Item controller");
     let filmID = req.params.filmID;

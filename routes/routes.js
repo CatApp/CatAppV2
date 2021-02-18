@@ -16,6 +16,7 @@ module.exports = (app) => {
     myControllers.login(app, req, res);
   });
 
+<<<<<<< Updated upstream
   router.get("/studentinfo", (req, res) => {
     console.info('ROUTES');
     myControllers.studentinfo(app, req, res);
@@ -26,6 +27,8 @@ module.exports = (app) => {
     myControllers.studentHome(app, req, res);
   });
 
+=======
+>>>>>>> Stashed changes
   router.get("/viewAll", (req, res) => {
     myControllers.viewAll(app, req, res);
   });
@@ -34,8 +37,8 @@ module.exports = (app) => {
     myControllers.viewAllJSON(app, req, res);
   });
 
-  router.get("/oneStudent/:SID", (req, res) => {
-    myControllers.oneStudent(app, req, res);
+  router.get("/studentinfo/:SID", (req, res) => {
+    myControllers.studentinfo(app, req, res);
   });
 
   return router;
