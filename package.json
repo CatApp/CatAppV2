@@ -8,6 +8,7 @@
     "ui": "browser-sync start --config bs-config.js"
   },
   "dependencies": {
+    "chart.js": "^2.9.4",
     "constantinople": "^4.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
