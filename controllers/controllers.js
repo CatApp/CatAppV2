@@ -40,25 +40,6 @@ module.exports = {
     });
   },
 
-<<<<<<< Updated upstream
-  studentinfo: function (app, req, res) {
-    console.info("Student Info");
-    return res.render("studentinfo", {
-      title: "Student Info",
-      //message: "Student Info Page",
-    });
-  },
-
-  studentHome: function (app, req, res) {
-    console.info("Student Home");
-    return res.render("studentHome", {
-      title: "Student Home",
-      //message: "Student Info Page",
-    });
-  },
-
-=======
->>>>>>> Stashed changes
   viewAll: function (app, req, res) {
     console.info("View All controller");
     app
