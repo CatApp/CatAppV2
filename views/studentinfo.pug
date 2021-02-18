@@ -43,15 +43,15 @@ block layout-content
         console.log('tab content')
         
       #RecognitionandRevision.tabcontent
-        form(action="/recognition" method="POST")
+        form(action="/recognitionData" method="POST")
           input(type="text" name="client" placeholder="client" required="")
           br
           input(type="text" name="target problem1" placeholder="target problem one" required="")
           br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar") 
+          input(type="radio" id="slider-bar" name="choice1"  value="slider-bar") 
           label(for="slider-bar")  Click above to generate a SliderBar on student's side
           br
-          input(type="radio" id="textbox" name="choice" value="textbox") 
+          input(type="radio" id="textbox" name="choice1"  value="textbox") 
           
           label(for="textbox") Click above to generate a Textbox on student's side
           br
@@ -59,37 +59,37 @@ block layout-content
           br
           input(type="text" name="target problem2" placeholder="target problem two" required="")
           br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+          input(type="radio" id="slider-bar" name="choice2"  value="slider-bar")
           label(for="slider-bar") Click above to generate a SliderBar on student's side
           br
-          input(type="radio" id="textbox" name="choice" value="textbox")
+          input(type="radio" id="textbox" name="choice2"  value="textbox")
           label(for="textbox") Click above to generate a Textbox on student's side
           br
-          input(type="text" name="target problem2 pattern (optional)" placeholder="target problem two pattern (optional)" required="")
+          input(type="text" name="target problem2 pattern (optional)"  placeholder="target problem two pattern (optional)" required="")
           br
           input(type="text" name="target problem3" placeholder="target problem three" required="")
           br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+          input(type="radio" id="slider-bar" name="choice3" value="slider-bar")
           label(for="slider-bar") Click above to generate a SliderBar on student's side
           br
-          input(type="radio" id="textbox" name="choice" value="textbox")
+          input(type="radio" id="textbox" name="choice3" value="textbox")
           label(for="textbox") Click above to generate  a Textbox on student's side
           br
           input(type="text" name="target problem3 pattern (optional)" placeholder="target problem three pattern (optional)" required="")
           br
           input(type="text" name="target problem4" placeholder="target problem four" required="")
           br
-          input(type="radio" id="slider-bar" name="choice" value="slider-bar")
+          input(type="radio" id="slider-bar" name="choice4" value="slider-bar")
           label(for="slider-bar") Click above to generate a SliderBar on student's side
           br
-          input(type="radio" id="textbox" name="choice" value="textbox")
+          input(type="radio" id="textbox" name="choice4" value="textbox")
           label(for="textbox") Click above to generate a TextBox on student's side
           br
           input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
           br
-        input(type="submit")
+        input(type="submit" value="submit")
         .script 
-          console.info("submitted") 
+          console.log('submitted') 
       #Changework.tabcontent
         div.changeworkTable
               p
