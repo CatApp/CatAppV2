@@ -39,7 +39,8 @@ header {
 }
 
 img {
-    width: 100%;
+    width: 60px;
+    padding-right: 5px;
 }
 
 .mainContent {
@@ -104,15 +105,6 @@ button[type="submit"] {
     color: #fff;
 }
 
-.logo img {
-    max-width: 400px;
-    padding: 5px;
-}
-
-.logo {
-    /* Don't set flex-basis as wrap will overrule it just set to grow and shrink */
-    flex: 1;
-}
 
 .logoutLink {
     /* Don't set flex-basis as wrap will overrule it just stop grow and shrink */

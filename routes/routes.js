@@ -29,6 +29,9 @@ module.exports = (app) => {
     myControllers.viewAllJSON(app, req, res);
   });
 
+  router.get("/oneStudent/:SID", (req, res) => {
+    myControllers.oneStudent(app, req, res, "oneStudent", "View: ")
+  });
 
   return router;
 };

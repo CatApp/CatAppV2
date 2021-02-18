@@ -22,30 +22,71 @@
 	width: 300px;
 	margin: 0 auto;
 	font-family: Tahoma, Geneva, sans-serif;
-	}
+}
 .login-form h1 {
 text-align: center;
 color: #AC3B61;
 font-size: 24px;
 padding: 20px 0 20px 0;
 }
+
 .login-form input[type="password"],
 .login-form input[type="text"] {
-width: 100%;
-padding: 15px;
-border: 1px solid #BAB2B5;
-margin-bottom: 15px;
-box-sizing:border-box;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #BAB2B5;
+    margin-bottom: 15px;
+    box-sizing:border-box;
 }
 .login-form input[type="submit"] {
-width: 100%;
-padding: 15px;
-background-color: #AC3B61;
-border: 0;
-box-sizing: border-box;
-cursor: pointer;
-font-weight: bold;
-color: #BAB2B5;
+    width: 100%;
+    padding: 15px;
+    background-color: #AC3B61;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #BAB2B5;
+}
+
+
+
+#student {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+  
+#student td, #student th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+#student tr:nth-child(even){background-color: #f2f2f2;}
+  
+#student tr:hover {background-color: #ddd;}
+  
+#student th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #9f1d35;
+    color: white;
+}
+
+img{
+	width: 60px;
+    padding-right: 10px;
+}
+
+#logo img {
+    max-width: 100%;
+    max-height: 60%;
+}
+
+#logo {
+    /* Don't set flex-basis as wrap will overrule it just set to grow and shrink */
+    flex: 1;
 }
 
 /* Add a black background color to the top navigation */
@@ -59,57 +100,50 @@ color: #BAB2B5;
 	height: 60px;
 	line-height: 1.5;
 	display: flex;
-	
+    align-items: center;
+    font-size: 1.25rem;
 }
-
-#student {
-	font-family: Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-  
-#student td, #student th {
-border: 1px solid #ddd;
-padding: 8px;
-}
-  
-#student tr:nth-child(even){background-color: #f2f2f2;}
-  
-#student tr:hover {background-color: #ddd;}
-  
-#student th {
-padding-top: 12px;
-padding-bottom: 12px;
-text-align: left;
-background-color: #9f1d35;
-color: white;
-}
-
-.image-responsive img{
-	width: fit-content;
-	height: 100%;
-}
-
 .pull-left{
-	display: flex;
-	width: 5%;
+    
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    margin-left: 10px;
+    height: inherit;
+    white-space: nowrap;
+    display: flex;
+    align-items:center;
+    
 }
+
+
+.pull-left span{
+	
+    text-decoration: none;
+    background-color: transparent;
+    height: 80%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin:0;
+    color: white;
+}
+
+.nav-left{
+    line-height: inherit;
+    align-items:center;
+}
+
 .nav-left li a{
 	display: inline-block;
 	color: white;
-	background-color:#9f1d35;
 	text-align:center;
 	text-decoration: none;
 	height: 100%;
 	margin: 0;
-	
-
+    padding: 14px 18px;
 }
 
-.nav-left ul:hover {
-	background-color: #111;
-	color: white;
-}
+
 
 .nav-left ul{
   list-style-type: none;
@@ -117,9 +151,7 @@ color: white;
   overflow: hidden;
   background-color: #9f1d35;
   height: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 14px 18px;
+  margin:0;
   max-width: 1;
 }
 
@@ -131,9 +163,8 @@ color: white;
 	height: 100%;
 	margin-top: 0;
 	margin-bottom: 0;
-	padding: 14px 18px;
 	max-width: 1;
-  }
+}
 
 .navbar li{
 	display: flex;
@@ -146,7 +177,7 @@ color: white;
 .nav-right {
 	float: right;
 	height: 100%;
-	line-height: 30px;
+	line-height: inherit;
 	right: 0;
 	position: absolute;
 }
@@ -155,14 +186,27 @@ color: white;
 	float: right;
 }
 
-.nav-right a{
-    padding-left: 4px;
-    padding-right: 4px;
+.nav-right li a{
+    display: inline-block;
+	color: white;
+	text-align:center;
+	text-decoration: none;
+	height: 100%;
+	margin: 0;
+    padding: 10px 14px;
+}
+
+.fas.fa-search
+{
+    font-size: 18px;
 }
 
 .logoutLink{
 	flex-grow: 1;
+    line-height: 35px;
 }
+
+
 
 .searchBar form
 {
@@ -182,10 +226,8 @@ color: white;
 .searchBar button{
 	float: left;
 	width: 20%;
-	padding: 10px;
 	background: #2196F3;
 	color: white;
-	font-size: 17px;
 	border: 1px solid grey;
 	border-left: none; /* Prevent double borders */
 	cursor: pointer;
@@ -200,10 +242,12 @@ color: white;
 
 
 /* Change background on mouse-over */
-.navbar a:hover {
-	background: #ddd;
-	color: black;
+.navbar li:hover {
+	background: grey;
+	color:  #ddd;
 }
+
+
   
 /* Main content */
 .container {
@@ -799,22 +843,22 @@ font-weight: bold;
     width: 300px;
     margin: 0 auto;
     font-family: Tahoma, Geneva, sans-serif;
-    }
-    .login-form h1 {
+}
+.login-form h1 {
     text-align: center;
     color: #AC3B61;
     font-size: 24px;
     padding: 20px 0 20px 0;
-    }
-    .login-form input[type="password"],
-    .login-form input[type="text"] {
+}
+.login-form input[type="password"],
+.login-form input[type="text"] {
     width: 100%;
     padding: 15px;
     border: 1px solid #BAB2B5;
     margin-bottom: 15px;
     box-sizing:border-box;
-    }
-    .login-form input[type="submit"] {
+}
+.login-form input[type="submit"] {
     width: 100%;
     padding: 15px;
     background-color: #AC3B61;
@@ -823,4 +867,4 @@ font-weight: bold;
     cursor: pointer;
     font-weight: bold;
     color: #BAB2B5;
-    }
+}
