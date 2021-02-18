@@ -21,6 +21,11 @@ module.exports = (app) => {
     myControllers.studentinfo(app, req, res);
   });
 
+  router.get("/studentHome", (req, res) => {
+    console.info('Student Home');
+    myControllers.studentHome(app, req, res);
+  });
+
   router.get("/viewAll", (req, res) => {
     myControllers.viewAll(app, req, res);
   });

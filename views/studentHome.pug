@@ -1,0 +1,80 @@
+extends layout
+
+block layout-content
+  div.View
+    head
+      div.navbar
+        div.pull-left
+            img(src="./images/CatApp-Logo.png" id="logo")
+            span CatApp
+        div.nav-left
+        
+        div.nav-right
+          ul
+            li        
+              a.logoutLink(href="/login") Logout
+            li  
+              a#StudentNameText Student name
+                // Text to be changed by js depending on the person logged in
+      //- h1.Banner Hello
+      //- div.Message
+      //-   div.Title Student Information
+              
+    body
+      div.containeralt
+        .tabstudent
+          button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
+          button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
+          button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
+        div.mainContent
+          #Therapy.tabcontent
+            h3 Therapy Maps
+          #RecognitionandRevision.tabcontent
+            h3 Recognition
+            p This the recognition and revision section
+          #Changework.tabcontent
+            div.changeworkTable
+              h3 ChangeWork
+              table#changework
+                tbody
+                  tr
+                    th Student ID
+                    th Things that help them 
+                    th Latest submission
+              script changeworkAdd()
+    footer
+      div.fcontainer
+        div.row
+          address
+            | 123 The High Street
+            br
+            |             Little SmallTown
+            br
+            |             Sheffield
+            br
+            |             S99 7ZZ
+        div.footerSocialLinks
+            ul
+              li
+                a(href="" aria-label="Twitter")
+                  i.fab.fa-twitter
+              li
+                a(href="" aria-label="Facebook")
+                  i.fab.fa-facebook
+              li
+                a(href="" aria-label="Instagram")
+                  i.fab.fa-instagram
+              li
+                a(href="" aria-label="YouTube")
+                  i.fab.fa-youtube
+        div.footerLinks
+            ul
+              li
+                a(href="") Terms and Conditions
+              li
+                a(href="") Accessibility
+              li
+                a(href="") Legal Information
+              li
+                a(href="") Privacy and GDPR
+            

@@ -18,6 +18,22 @@
 	overflow:auto;
 }
 
+.containeralt{
+	max-width: 1;
+	/* 1366x768	16:9*/
+	margin:auto;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	font-size: 17px;
+	position: absolute;
+	min-height: 2em;
+	top: 0px;
+	bottom: 150px;
+	overflow:auto;
+    width: 100%;
+}
+
 .login-form {
 	width: 300px;
 	margin: 0 auto;
@@ -250,7 +266,7 @@ img{
 
   
 /* Main content */
-.container {
+.container, .containeralt {
 	margin-top: 60px; /* Add a top margin to avoid content overlay */
 }
 
@@ -258,36 +274,57 @@ img{
 	overflow: hidden;
 	border: 1px solid #ccc;
 	background-color:#AC3B61 ;
-  }
+}
+
+
+.tabstudent
+{
+    float: left;
+    border-right: 1px solid #ccc;
+    background-color:#AC3B61 ;
+    width: 20%;
+    height:100%;
+}
   
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-	background-color: inherit;
-	float: left;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-	background-color: #ddd;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
-	background-color: #ccc;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-	display: none;
-	padding: 6px 12px;
-	border: 1px solid #ccc;
-	border-top: none;
-  }
+/* Style the buttons that are used to open the tab content */
+.tab button, .tabstudent button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    
+}
+
+.tabstudent button{
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 22px 16px !important;
+    font-size: 16px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover, .tabstudent button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active, .tabstudent button:active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+    width: 100%;
+    text-align: left;
+}
 
 /* use a hand cursor intead of arrow for the action buttons */
 .filepond--file-action-button {
@@ -570,7 +607,7 @@ main {
 .SliderBar{
     width:60%;
     margin: 24% auto;
-position: relative;
+    position: relative;
 }
 #slider{
     -webkit-appearance: none;
@@ -584,8 +621,8 @@ position: relative;
     width:46px;
     height:48px;
     cursor:pointer;
-z-index:3;
-position:relative;
+    z-index:3;
+    position:relative;
 }
 #selector{
     height:96px;
@@ -633,7 +670,7 @@ position:relative;
 .SliderBar2{
     width:60%;
     margin: 24% auto;
-position: relative;
+    position: relative;
 }
 #slider2{
     -webkit-appearance: none;
@@ -647,8 +684,8 @@ position: relative;
     width:46px;
     height:48px;
     cursor:pointer;
-z-index:3;
-position:relative;
+    z-index:3;
+    position:relative;
 }
 #selector2{
     height:96px;
@@ -670,17 +707,17 @@ position:relative;
     bottom:0;
 }
 #SelectValue2{
-width:46px;
-height:48px;
-position: absolute;
-top:0;
-background:#420f3c ;
-border-radius: 2px;
-text-align: center;
-color:#BAB2B5;
-line-height:45px ;
-font-size: 20px;
-font-weight: bold;
+    width:46px;
+    height:48px;
+    position: absolute;
+    top:0;
+    background:#420f3c ;
+    border-radius: 2px;
+    text-align: center;
+    color:#BAB2B5;
+    line-height:45px ;
+    font-size: 20px;
+    font-weight: bold;
 }
 #ProgressBar2{
     width:50px;
@@ -719,8 +756,8 @@ position: relative;
     width:46px;
     height:48px;
     cursor:pointer;
-z-index:3;
-position:relative;
+    z-index:3;
+    position:relative;
 }
 #selector3{
     height:96px;
@@ -742,17 +779,17 @@ position:relative;
     bottom:0;
 }
 #SelectValue3{
-width:46px;
-height:48px;
-position: absolute;
-top:0;
-background:#420f3c ;
-border-radius: 2px;
-text-align: center;
-color:#BAB2B5;
-line-height:45px ;
-font-size: 20px;
-font-weight: bold;
+    width:46px;
+    height:48px;
+    position: absolute;
+    top:0;
+    background:#420f3c ;
+    border-radius: 2px;
+    text-align: center;
+    color:#BAB2B5;
+    line-height:45px ;
+    font-size: 20px;
+    font-weight: bold;
 }
 #ProgressBar3{
     width:50px;
@@ -825,19 +862,19 @@ font-weight: bold;
 #changework td, #changework th {
 	border: 1px solid #ddd;
 	padding: 8px;
-	}
+}
 	  
-	#changework tr:nth-child(even){background-color: #f2f2f2;}
-	  
-	#changework tr:hover {background-color: #ddd;}
-	  
-	#changework th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: #9f1d35;
-	color: white;
-	}
+#changework tr:nth-child(even){background-color: #f2f2f2;}
+    
+#changework tr:hover {background-color: #ddd;}
+    
+#changework th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #9f1d35;
+    color: white;
+}
 
 .login-form {
     width: 300px;
