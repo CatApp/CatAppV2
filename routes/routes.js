@@ -30,7 +30,7 @@ module.exports = (app) => {
   });
 
   router.get("/oneStudent/:SID", (req, res) => {
-    myControllers.oneStudent(app, req, res, "oneStudent", "View: ")
+    myControllers.oneStudent(app, req, res);
   });
 
   return router;
