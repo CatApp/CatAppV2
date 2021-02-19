@@ -24,16 +24,6 @@ module.exports = {
 
   login: function (app, req, res) {
 
-    // const username = req.body.username;
-    //   let loginResult = login(username, req.body.password)
-    // app
-    //   .post("login", passport.authenticate("local",{
-    //     successRedirect:"/index",
-    //     failureRedirect:"/login"
-    //   }),function(req,res){
-
-    //   });
-
     return res.render("login", {
       title: "Welcome",
       message: "Demo Node Site."

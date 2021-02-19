@@ -34,6 +34,10 @@
     width: 100%;
 }
 
+.containeralt .mainContent{
+    padding-left:15px !important ;
+}
+
 .login-form {
 	width: 300px;
 	margin: 0 auto;
@@ -281,9 +285,18 @@ img{
 {
     float: left;
     border-right: 1px solid #ccc;
-    background-color:#AC3B61 ;
-    width: 25%;
+    background-color:#9A1750 ;
+    width: 150px;
     height:100%;
+    flex-grow: 1;
+    bottom: 150px;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0px;
+    bottom: auto;
 }
   
 /* Style the buttons that are used to open the tab content */
@@ -316,8 +329,13 @@ img{
     background-color: #ccc;
 }
 
+.tabstudent .tablinks.active{
+    width: 110%;
+    background-color: #ccc;
+}
+
 .tabstudent button:hover,.tabstudent button:active{
-    width: 115%;
+    width: 110%;
 }
 
 /* Style the tab content */
@@ -604,21 +622,24 @@ main {
     text-shadow: teal;
     text-align: center;
     padding: 14px 16px;
-    position: absolute;
-    top:350px;
-    left:30%;
+    position: relative;
+  
 }
 .SliderBar{
     width:60%;
-    margin: 24% auto;
+    margin: 10% auto;
     position: relative;
+    border-radius: 25px;
+    background-color:white ;
+    box-shadow: 0 0 0pt 2pt #d59db0;
 }
 #slider{
     -webkit-appearance: none;
     width:100%;
-    height:40px;
-    outline:none;
-    border-radius:3px;
+    height:4px;
+    outline: none;
+    border:3px;
+    background-color: transparent;
 }
 #slider::-webkit-slider-thumb{
     -webkit-appearance:none;
@@ -632,15 +653,15 @@ main {
     height:96px;
     width:46px;
     position:absolute;
-    bottom:0px;
+    bottom:-14px;
     left: 50%;
     transform: translateX(-50%);
     z-index:2;
 }
 .SelectBtn{
     height:48px;
-    width:46px;
-    background-image: url(../images/CatApp-Logo.png);
+    width:48px;
+    background-image: url(../images/pinkslider.png);
     background-size: cover;
     background-position:center;
     border-radius: 50%;
@@ -663,25 +684,33 @@ main {
 }
 
 #ProgressBar{
-    width:50px;
-    height:40px;
-    background:#AC3B61;
-    border-radius:3px;
+    width:50%;
+    height:100%;
+    background-color: #d59db0;
+    border:3px;
     position:absolute;
     top:0;
     left:0;
+    border-radius:25px;
+    
+    
 }
 .SliderBar2{
     width:60%;
-    margin: 24% auto;
+    margin: 10% auto;
     position: relative;
+    border-radius: 25px;
+    background-color:white ;
+    box-shadow: 0 0 0pt 2pt #d59db0;
 }
 #slider2{
     -webkit-appearance: none;
     width:100%;
-    height:40px;
-    outline:none;
-    border-radius:3px;
+    height:4px;
+    outline: none;
+    border:3px;
+    background-color: transparent;
+
 }
 #slider2::-webkit-slider-thumb{
     -webkit-appearance:none;
@@ -695,15 +724,15 @@ main {
     height:96px;
     width:46px;
     position:absolute;
-    bottom:0px;
+    bottom:-14px;
     left: 50%;
     transform: translateX(-50%);
     z-index:2;
 }
 .SelectBtn2{
     height:48px;
-    width:46px;
-    background-image: url(../images/CatApp-Logo.png);
+    width:48px;
+    background-image: url(../images/pinkslider.png);
     background-size: cover;
     background-position:center;
     border-radius: 50%;
@@ -724,13 +753,14 @@ main {
     font-weight: bold;
 }
 #ProgressBar2{
-    width:50px;
-    height:40px;
-    background:#AC3B61;
-    border-radius:3px;
+    width:50%;
+    height:100%;
+    background-color: #d59db0;
+    border:3px;
     position:absolute;
     top:0;
     left:0;
+    border-radius:25px;
 }
 .q2{
     font-style: oblique;
@@ -739,21 +769,25 @@ main {
     text-shadow: teal;
     text-align: center;
     padding: 14px 16px;
-    position: absolute;
-    top:850px;
-    left:30%;  
+    position: relative;
+   
 }
 .SliderBar3{
     width:60%;
-    margin: 24% auto;
-position: relative;
+    margin: 10% auto;
+    position: relative;
+    border-radius: 25px;
+    background-color:white ;
+    box-shadow: 0 0 0pt 2pt #d59db0;
 }
 #slider3{
     -webkit-appearance: none;
     width:100%;
-    height:40px;
+    height:4px;
     outline:none;
     border-radius:3px;
+    background-color: transparent;
+
 }
 #slider3::-webkit-slider-thumb{
     -webkit-appearance:none;
@@ -767,15 +801,15 @@ position: relative;
     height:96px;
     width:46px;
     position:absolute;
-    bottom:0px;
+    bottom:-14px;
     left: 50%;
     transform: translateX(-50%);
     z-index:2;
 }
 .SelectBtn3{
     height:48px;
-    width:46px;
-    background-image: url(../images/CatApp-Logo.png);
+    width:48px;
+    background-image: url(../images/pinkslider.png);
     background-size: cover;
     background-position:center;
     border-radius: 50%;
@@ -796,13 +830,14 @@ position: relative;
     font-weight: bold;
 }
 #ProgressBar3{
-    width:50px;
-    height:40px;
-    background:#AC3B61;
-    border-radius:3px;
+    width:50%;
+    height:100%;
+    background-color: #d59db0;
+    border:3px;
     position:absolute;
     top:0;
     left:0;
+    border-radius:25px;
 }
 .q3{
     font-style: oblique;
@@ -811,9 +846,8 @@ position: relative;
     text-shadow: teal;
     text-align: center;
     padding: 14px 16px;
-    position: absolute;
-    top:1350px;
-    left:30%;  
+    position: relative;
+     
 }
 .input-group{
     
