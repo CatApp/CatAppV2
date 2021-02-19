@@ -28,6 +28,7 @@ module.exports = (app) => {
     myControllers.studentinfo(app, req, res);
   });
 
+
   router.get("/studentHome", (req, res) => {
     myControllers.studentHome(app, req, res);
   });

@@ -4,7 +4,7 @@ var ObjectId = require("mongodb").ObjectId;
 
 
 module.exports = {
-  index: function (app, req, res) {
+  index: function(app, req, res) {
     console.info("Index Controller");
     app
       .set("myDb")
@@ -83,6 +83,19 @@ module.exports = {
           //login: req.session.login,
           });
       });
+	},
+	insertClientForm: function (app, req, res) {
+    console.info("Insert Form Post controller");
+    var newClientForm = req.body;
+	console.info(req.body)
+    app
+      .get("myDb")
+      .collection("TherapistRecognition")
+      .insertOne(newClientForm, function (err, dbResp) {
+        if (err) {
+          console.error(err);
+        }
+      });
   },
 
   studentHome: function (app, req, res) {
@@ -93,55 +106,6 @@ module.exports = {
     });
   },
 }
-/*studentinfo: function (app, req, res) {
-    console.info("Student Info");
-    return res.render("studentinfo", {
-      title: "Student Info",
-      //message: "Student Info Page",
-    });
-  },*/
 
-  /*getItem: function (app, req, res, view, viewTitle) {
-    console.info("Get Item controller");
-    let filmID = req.params.filmID;
-    var o_id = new ObjectId(filmID);
 
-    app
-      .set("myDb")
-      .collection("filmsCollection")
-      .find({ _id: o_id })
-      .toArray(function (err, docs) {
-        if (err) {
-          console.error(err);
-        }
-        console.dir(docs);
-        return res.render(view, {
-          title: `${viewTitle} ${docs[0].filmName}`,
-          film: docs[0],
-          login: req.session.login,
-        });
-      });
-  },*/
-  
-  /*searchResults: function (app, req, res) {
-    console.info("View All controller");
-    var searchVal = req.query.searchVal;
-    console.info(searchVal);
 
-    app
-      .set("myDb")
-      .collection("filmsCollection")
-      .find({ filmName: { $regex: new RegExp(searchVal, "i") } })
-      .toArray(function (err, docs) {
-       // console.dir(docs);
-        if (err) {
-          console.error(err);
-        }
-        return res.render("films", {
-          title: "Search Results for " + searchVal,
-          searchMsg: `Your Search Found ${docs.length} films.`,
-          films: docs,
-          login: req.session.login,
-        });
-      });
-  },*/
