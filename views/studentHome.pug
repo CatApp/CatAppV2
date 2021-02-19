@@ -48,44 +48,44 @@ block layout-content
                 .SelectBtn2
                 #SelectValue2
               #ProgressBar2
-                .q3
-                  p1
-                    | On a scale from 0-100, 100 being very excited and 0 being very bored, how do you feel?
-                .SliderBar3
-                  input#slider3(type='range' min='0' max='100' value='50')
-                  #selector3
-                    .SelectBtn3
-                    #SelectValue3
-                  #ProgressBar3
-                script.
-                  var slider=document.getElementById("slider");
-                  var selector=document.getElementById("selector");
-                  var ProgressBar= document.getElementById("ProgressBar");
-                  SelectValue.innerHTML = slider.value;
-                  var slider2=document.getElementById("slider2");
-                  var selector2=document.getElementById("selector2");
-                  var ProgressBar2= document.getElementById("ProgressBar2");
-                  SelectValue2.innerHTML = slider2.value;
-                  var slider3=document.getElementById("slider3");
-                  var selector3=document.getElementById("selector3");
-                  var ProgressBar3= document.getElementById("ProgressBar3");
-                  SelectValue3.innerHTML = slider3.value;
-                  slider.oninput=function()
-                  {
-                  SelectValue.innerHTML = this.value;
-                  selector.style.left =this.value+ "%";
-                  ProgressBar.style.width =this.value+ "%";
-                  }
-                  slider2.oninput = function(){
-                  SelectValue2.innerHTML = this.value;
-                  selector2.style.left =this.value+"%";
-                  ProgressBar2.style.width =this.value+ "%";
-                  }
-                  slider3.oninput = function(){
-                  SelectValue3.innerHTML = this.value;
-                  selector3.style.left =this.value+"%";
-                  ProgressBar3.style.width =this.value+ "%";
-                  }
+            .q3
+              p1
+                | On a scale from 0-100, 100 being very excited and 0 being very bored, how do you feel?
+            .SliderBar3
+              input#slider3(type='range' min='0' max='100' value='50')
+              #selector3
+                .SelectBtn3
+                #SelectValue3
+              #ProgressBar3
+            script.
+              var slider=document.getElementById("slider");
+              var selector=document.getElementById("selector");
+              var ProgressBar= document.getElementById("ProgressBar");
+              SelectValue.innerHTML = slider.value;
+              var slider2=document.getElementById("slider2");
+              var selector2=document.getElementById("selector2");
+              var ProgressBar2= document.getElementById("ProgressBar2");
+              SelectValue2.innerHTML = slider2.value;
+              var slider3=document.getElementById("slider3");
+              var selector3=document.getElementById("selector3");
+              var ProgressBar3= document.getElementById("ProgressBar3");
+              SelectValue3.innerHTML = slider3.value;
+              slider.oninput=function()
+              {
+              SelectValue.innerHTML = this.value;
+              selector.style.left =this.value+ "%";
+              ProgressBar.style.width =this.value+ "%";
+              }
+              slider2.oninput = function(){
+              SelectValue2.innerHTML = this.value;
+              selector2.style.left =this.value+"%";
+              ProgressBar2.style.width =this.value+ "%";
+              }
+              slider3.oninput = function(){
+              SelectValue3.innerHTML = this.value;
+              selector3.style.left =this.value+"%";
+              ProgressBar3.style.width =this.value+ "%";
+              }
           #Changework.tabcontent
             div.changeworkTable
               h3 ChangeWork                      
