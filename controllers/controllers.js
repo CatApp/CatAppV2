@@ -93,24 +93,11 @@ module.exports = {
           //login: req.session.login,
           });
       });
-  },
-
-  studentHome: function (app, req, res) {
-    console.info("Student Home");
-    return res.render("studentHome", {
-      title: "Welcome",
-      message: "Demo Node Site."
-    });
-  },
-  insert: function(app,req,res){
-	return res.render("studentInfo", {
-		title: "Add client form",
-		//login: req.session.login,
-	  });  
-  },
-  insert: function (app, req, res) {
+	},
+	insertClientForm: function (app, req, res) {
     console.info("Insert Form Post controller");
     var newClientForm = req.body;
+	console.info(req.body)
     app
       .get("myDb")
       .collection("TherapistRecognition")
@@ -119,6 +106,14 @@ module.exports = {
           console.error(err);
         }
       });
+  },
+
+  studentHome: function (app, req, res) {
+    console.info("Student Home");
+    return res.render("studentHome", {
+      title: "Welcome",
+      message: "Demo Node Site."
+    });
   },
 }
 
