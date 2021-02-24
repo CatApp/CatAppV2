@@ -339,7 +339,7 @@ img{
 }
 
 /* Style the tab content */
-.tabcontent {
+.tabcontent, .overall-changework, .container-changework {
     display: none;
     padding: 6px 12px;
     /* border: 1px solid #ccc; */
@@ -627,7 +627,7 @@ main {
 }
 .SliderBar{
     width:60%;
-    margin: 10% auto;
+    margin: 7% auto;
     position: relative;
     border-radius: 25px;
     background-color:white ;
@@ -697,7 +697,7 @@ main {
 }
 .SliderBar2{
     width:60%;
-    margin: 10% auto;
+    margin: 7% auto;
     position: relative;
     border-radius: 25px;
     background-color:white ;
@@ -774,7 +774,7 @@ main {
 }
 .SliderBar3{
     width:60%;
-    margin: 10% auto;
+    margin: 7% auto;
     position: relative;
     border-radius: 25px;
     background-color:white ;
@@ -849,15 +849,28 @@ main {
     position: relative;
      
 }
-.input-group{
-    
-    margin: 50px 0px;
+.form-control{
+    margin: 1% 1% auto;
+    width: 80%;
+    height: 50px;
+    position: relative;
+    display: block;
 }
 
-.input-group input{
-    height: 45px;
+.overall-changework, .container-changework{
+    height:100%;
+    bottom: auto;
+    position: relative;
+    display: block;
+}
+
+.input-group{
+    height: fit-content;
+    padding: 1px;
     
 }
+
+.input-group-
 
 .btn-add{
 
