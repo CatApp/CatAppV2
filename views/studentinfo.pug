@@ -1,9 +1,6 @@
 extends layout
 block layout-content
   div.View.StudentInfoView
-    h1.Banner Hello
-    div.Message
-      div.Title Student Information
     head
       div.navbar
         div.pull-left
@@ -13,14 +10,17 @@ block layout-content
         div.nav-left
           ul
             li  
-              a#therapistNameText Name
-                // Text to be changed by js depending on the person logged in
-        
+              a#therapistNameText
+               //script checkTherapist(Student,Therapist);
+                          
         div.nav-right
           ul
             li        
               a.logoutLink(href="/login") Logout
       .tab
+        div.hori-selector
+          .left
+          .right
         button.tablinks(onclick="openTab(event, 'Home')") Home
         button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
@@ -28,6 +28,9 @@ block layout-content
         button.tablinks(onclick="openTab(event, 'AddClient')") Add Client Form 
     body
         // Tab content
+        #Home.tabcontent 
+          h3="Information for student: " + Student.Fname + "." +  Student.Lname
+        
         #Therapy.tabcontent
           h3 Therapy Maps
           p therapy section, here you can upload any visualisations you might have done recently.

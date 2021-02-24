@@ -1,4 +1,4 @@
-
+//@ts-check
 (function(){
 $(window).on("resize", function(ev) {
   //console.info(window.innerWidth);
@@ -45,8 +45,53 @@ function openTab(evt, findTab) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(findTab).style.display = "block";
   evt.currentTarget.className += " active";
+
+
+  var tabsNewAnim = $('.tab');
+  var selectorNewAnim = tablinks.length;
+  // var activeItemNewAnim = tabsNewAnim.find('tablinks active')
+  // var selectorNewAnim = $(".tabs").find(".selector");
+  for(i = 0; i < tablinks.length; i++)
+  {
+    if(tablinks[i].classList.contains('active'))
+    {
+      var activeItemNewAnim = tablinks[i];
+    }
+  }
+  var activeWidthNewAnimWidth = $(activeItemNewAnim).innerWidth();
+  var itemPosNewAnimLeft = $(activeItemNewAnim).position();
+  $(".hori-selector").css({
+    "left":itemPosNewAnimLeft.left + "px",
+    "width": activeWidthNewAnimWidth + "px"
+  });
+  // $(".tab").on("click",function(e){
+  //   var activeWidthNewAnimWidth = $(this).innerWidth();
+  //   var itemPosNewAnimLeft = $(this).position();  
+  //   $(".hori-selector").css({
+  //     "left":itemPosNewAnimLeft.left + "px",
+  //     "width": activeWidthNewAnimWidth + "px"
+  //   });
+  // });
+
+
 }
 
+
+// function checkTherapist(Student,Therapist){
+//   var S =$(Student.TID)
+//   var T = Array.from($(Therapist))
+//   var Result
+
+//   Therapist.forEach(element => {
+
+//     if(T.TID = S)
+//     {
+//       Result = T.Fname + T.Lname;
+//     }
+    
+//   });
+
+// }
 
 
 // Add products to <table>
