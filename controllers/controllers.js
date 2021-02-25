@@ -23,11 +23,20 @@ module.exports = {
   },
 
   login: function (app, req, res) {
-
-    return res.render("login", {
-      title: "Welcome",
-      message: "Demo Node Site."
-    });
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({})
+      .toArray(function (err, docs) {
+        console.dir(docs)
+        if (err) {
+          console.error(err);
+        }
+        return res.render("login", {
+          title: "Login",
+          Students: docs
+        });
+      });
   },
 
   viewAll: function (app, req, res) {
@@ -119,16 +128,35 @@ module.exports = {
   },
 
   studentHome: function (app, req, res) {
+    console.info("Student home controller");
+    let SID = req.params.SID;
+    var o_id = new ObjectId(SID);
+
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({_id: o_id})
+
+      .toArray(function (err, docs) {
+        if (err) {
+          console.error(err);
+        }
+        console.dir(docs);
+        return res.render("studentHome", {
+          title: `${docs[0].Lname}`,
+          Student: docs[0]
+          //login: req.session.login,
+          });
+      });
+	}
+
+  /*studentHome: function (app, req, res) {
     console.info("Student Home");
     return res.render("studentHome", {
       title: "Welcome",
       message: "Demo Node Site."
     });
-  },
-  //Recognition: function (app,req,res){
-	//console.info("hello");
-    //console.info(req.body.client);
- // }
+  },*/
 }
 
 

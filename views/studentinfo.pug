@@ -1,9 +1,6 @@
 extends layout
 block layout-content
   div.View.StudentInfoView
-    h1.Banner Hello
-    div.Message
-      div.Title Student Information
     head
       div.navbar
         div.pull-left
@@ -13,21 +10,27 @@ block layout-content
         div.nav-left
           ul
             li  
-              a#therapistNameText Name
-                // Text to be changed by js depending on the person logged in
-        
+              a#therapistNameText
+               //script checkTherapist(Student,Therapist);
+                          
         div.nav-right
           ul
             li        
               a.logoutLink(href="/login") Logout
       .tab
-        button.tablinks(onclick="openTab(event, 'Home')") Home
+        div.hori-selector#b
+          .left
+          .right
+        button.tablinks(onclick="openTab(event, 'Home')" onmouseover="onhoverTabs('Home')") Home
         button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
         button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
         button.tablinks(onclick="openTab(event, 'AddClient')") Add Client Form 
     body
         // Tab content
+        #Home.tabcontent 
+          h3="Information for student: " + Student.Fname + "." +  Student.Lname
+        
         #Therapy.tabcontent
           h3 Therapy Maps
           p therapy section, here you can upload any visualisations you might have done recently.
@@ -75,51 +78,68 @@ block layout-content
         
         #AddClient.tabcontent
           h3 Add Client Questions
-          p Please Enter a problem area and question to push to the students applicat
           div.addclientform
             form(action="/recognition" method="POST")
-              input(type="text" name="client" placeholder="Client Name" required="")
-              br
-              input(type="text" name="targetproblem1" placeholder="TargetProblem" required="")
-              br
-              input(type="radio" id="slider-bar" name="choice1" value="slider-bar") 
-              label(for="slider-bar")  Click above to generate a SliderBar on student's side
-              br
-              //input(type="radio" id="textbox" name="choice1" value="textbox") 
-              //label(for="textbox") Click above to generate a Textbox on student's side
-              br
-              input(type="text" name="targetproblem1pattern" placeholder="Target Problem: Question One" required="")
-              br
-              input(type="text" name="targetproblem2" placeholder="target problem two" required="")
-              br
-              input(type="radio" id="slider-bar" name="choice2" value="slider-bar")
-              label(for="slider-bar") Click above to generate a SliderBar on student's side
-              br
-              //input(type="radio" id="textbox" name="choice2" value="textbox")
-              //label(for="textbox") Click above to generate a Textbox on student's side
-              br
-              input(type="text" name="targetproblem2pattern" placeholder="target problem two pattern (optional)" required="")
-              br
-              input(type="text" name="targetproblem3" placeholder="target problem three" required="")
-              br
-              input(type="radio" id="slider-bar" name="choice3" value="slider-bar")
-              label(for="slider-bar") Click above to generate a SliderBar on student's side
-              br
-              //input(type="radio" id="textbox" name="choice3" value="textbox")
-              //label(for="textbox") Click above to generate  a Textbox on student's side
-              br
-              input(type="text" name="targetproblem3pattern" placeholder="target problem three pattern (optional)" required="")
-              br
-              input(type="text" name="targetproblem4" placeholder="target problem four" required="")
-              br
-              input(type="radio" id="slider-bar" name="choice4" value="slider-bar")
-              label(for="slider-bar") Click above to generate a SliderBar on student's side
-              br
-              //input(type="radio" id="textbox" name="choice4" value="textbox")
-              //label(for="textbox") Click above to generate a TextBox on student's side
-              br
-              input(type="text" name="targetproblem4pattern" placeholder="target problem four pattern (optional) " required="")
-              br
+              div.form-group
+                input(type="text" name="Fname" placeholder="First Name" required="")
+                br
+                input(type="text" name="Lname" placeholder="Last Name" required="")
+                br
+              p Please Enter a problem area and question to push to the students application
+              div.target-wrapper
+                input(type="text" name="target problem1" placeholder="Target Problem" required="")
+                br
+                input(type="text" name="target problem1 pattern (optional)" placeholder="Target Problem: Question One" required="")
+                br
+
+              div.radio-wrapper
+                input(type="radio" id="slider-bar" name="choice1" value="slider-bar") 
+                label(for="slider-bar")  Click above to generate a SliderBar on student's side
+                br
+                input(type="radio" id="textbox" name="choice1" value="textbox") 
+                label(for="textbox") Click above to generate a Textbox on student's side
+                br
+
+              div.target-wrapper
+                input(type="text" name="target problem2" placeholder="target problem two" required="")
+                br
+                input(type="text" name="target problem2 pattern (optional)" placeholder="target problem two pattern (optional)" required="")
+                br
+
+              div.radio-wrapper
+                input(type="radio" id="slider-bar" name="choice2" value="slider-bar")
+                label(for="slider-bar") Click above to generate a SliderBar on student's side
+                br
+                input(type="radio" id="textbox" name="choice2" value="textbox")
+                label(for="textbox") Click above to generate a Textbox on student's side
+                br
+
+              div.target-wrapper
+                input(type="text" name="target problem3" placeholder="target problem three" required="")
+                br
+                input(type="text" name="target problem3 pattern (optional)" placeholder="target problem three pattern (optional)" required="")
+                br
+
+              div.radio-wrapper
+                input(type="radio" id="slider-bar" name="choice3" value="slider-bar")
+                label(for="slider-bar") Click above to generate a SliderBar on student's side
+                br
+                input(type="radio" id="textbox" name="choice3" value="textbox")
+                label(for="textbox") Click above to generate  a Textbox on student's side
+                br
+              div.target-wrapper
+                input(type="text" name="target problem4" placeholder="target problem four" required="")
+                br
+                input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
+                br
+              div.radio-wrapper
+                input(type="radio" id="slider-bar" name="choice4" value="slider-bar")
+                label(for="slider-bar") Click above to generate a SliderBar on student's side
+                br
+                input(type="radio" id="textbox" name="choice4" value="textbox")
+                label(for="textbox") Click above to generate a TextBox on student's side
+                br
+              
               input(type="submit")
               .script 
                 console.info("submitted")
