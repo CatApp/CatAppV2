@@ -76,6 +76,17 @@ function openTab(evt, findTab) {
 
 }
 
+function onhoverTabs(tab)
+{
+  var activetab = document.getElementById(tab);
+
+  if(activetab.classList.contains(".active")){
+    var hover = document.getElementById("b")
+    hover.style.boxShadow = "inset -5px -5px 5px white";
+  }
+
+}
+
 
 // function checkTherapist(Student,Therapist){
 //   var S =$(Student.TID)

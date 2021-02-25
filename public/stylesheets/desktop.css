@@ -111,7 +111,6 @@ img{
 
 /* Add a black background color to the top navigation */
 .navbar {
-	overflow: hidden;
 	background-color:#9f1d35;
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
@@ -277,13 +276,12 @@ img{
 .tab {
 	background: transparent;
 	float: left;
-	overflow: hidden;
-	position: relative;
 	padding: 10px 0px;
     width: 100%;
     height: 60px;
-    top:60px;
-
+    position:fixed;
+    margin-top: 60px !important;
+    top:0px;
     
     /* overflow: hidden;
 	border: 1px solid #ccc;
@@ -343,9 +341,9 @@ img{
     display: block;
     padding: 0px 20px;
     transition-duration:0.6s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	
     position: relative;
-    border: none:
+    border: none;
 }
 
 .tabstudent button{
@@ -357,8 +355,14 @@ img{
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover, .tabstudent button:hover {
+.tabstudent button:hover {
     background-color: #ddd;
+}
+
+.tablinks.active:hover ~ #b{
+    -moz-box-shadow: inset -5px -5px 5px white;
+    -webkit-box-shadow: inset -5px -5px 5px white;
+    box-shadow: inset -5px -5px 5px white;
 }
 
 /* Create an active/current tablink class */
@@ -402,7 +406,7 @@ img{
 	transition-duration:0.6s;
 	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	background-color: #9f1d35;
-    box-shadow: 5px 0px 5px grey;
+    box-shadow: 3px 3px 6px #888;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 }
@@ -454,13 +458,16 @@ img{
     padding: 6px 12px;
     /* border: 1px solid #ccc; */
     border-top: none;
-    width: 100%;
+    width: 100vw;;
     text-align: left;
 }
 
 .tabcontent{
-    position: absolute;
+    position: fixed;
     top:100px;
+    height:100vh;
+    overflow-y:scroll;
+    overflow-x:hidden;
 }
 
 /* use a hand cursor intead of arrow for the action buttons */
