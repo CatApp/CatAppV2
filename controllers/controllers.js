@@ -86,7 +86,7 @@ module.exports = {
 	},
 	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
-    /*var clientFormID = req.body.client;
+    var clientFormID = req.body.client;
 	var targetProblem1 =req.body.targetproblem1;
 	var inputChoice1 = req.body.choice1;
 	var targetProblem1Pattern=req.body.targetproblem1pattern;
@@ -98,7 +98,7 @@ module.exports = {
 	var targetProblem3Pattern = req.body.targetproblem3pattern;
 	var targetProblem4 = req.body.targetproblem4;
 	var inputChoice4 = req.body.choice4;
-	var targetProblem4Pattern= req.body.targetproblem4pattern;*/
+	var targetProblem4Pattern= req.body.targetproblem4pattern;
 	console.info(req.body)
 	var newEntry=req.body;
     app
