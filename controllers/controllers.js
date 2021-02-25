@@ -84,17 +84,31 @@ module.exports = {
           });
       });
 	},
-	insertClientForm: function (app, req, res) {
+	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
-    var newClientForm = req.body;
+    var clientFormID = req.body.client;
+	var targetProblem1 =req.body.targetproblem1;
+	var inputChoice1 = req.body.choice1;
+	var targetProblem1Pattern=req.body.targetproblem1pattern;
+	var targetProblem2= req.body.targetproblem2;
+	var inputChoice2= req.body.choice2;
+	var targetProblem2Pattern= req.body.targetproblem2pattern;
+	var targetProblem3 = req.body.targetproblem3;
+	var inputChoice3 = req.body.choice3;
+	var targetProblem3Pattern = req.body.targetproblem3pattern;
+	var targetProblem4 = req.body.targetproblem4;
+	var inputChoice4 = req.body.choice4;
+	var targetProblem4Pattern= req.body.targetproblem4pattern;
 	console.info(req.body)
     app
       .get("myDb")
       .collection("TherapistRecognition")
-      .insertOne(newClientForm, function (err, dbResp) {
+      .insertOne(clientFormID,targetProblem1,inputChoice1,targetProblem1Pattern,targetProblem2,inputChoice2,targetProblem2Pattern,targetProblem3,inputChoice3,targetProblem3Pattern,targetProblem4,inputChoice4,targetProblem4Pattern, function (err, dbResp) {
         if (err) {
           console.error(err);
         }
+		else
+		console.log(result[0].body)
       });
   },
 
@@ -105,6 +119,10 @@ module.exports = {
       message: "Demo Node Site."
     });
   },
+  //Recognition: function (app,req,res){
+	//console.info("hello");
+    //console.info(req.body.client);
+ // }
 }
 
 
