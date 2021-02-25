@@ -111,6 +111,7 @@ img{
 
 /* Add a black background color to the top navigation */
 .navbar {
+	overflow: hidden;
 	background-color:#9f1d35;
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
@@ -274,26 +275,16 @@ img{
 }
 
 .tab {
-	background: transparent;
-	float: left;
-	padding: 10px 0px;
-    width: 100%;
-    height: 60px;
-    position:fixed;
-    margin-top: 60px !important;
-    top:0px;
-    
-    /* overflow: hidden;
+	overflow: hidden;
 	border: 1px solid #ccc;
 	background-color:#AC3B61 ;
-    position: relative; */
 }
 
 
 .tabstudent
 {
     float: left;
-    border: none;
+    border-right: 1px solid #ccc;
     background-color:#9A1750 ;
     width: 150px;
     height:100%;
@@ -309,8 +300,7 @@ img{
 }
   
 /* Style the buttons that are used to open the tab content */
-.tabstudent button { 
-    /* tab button usually here aswell  */
+.tab button, .tabstudent button {
     background-color: inherit;
     float: left;
     border: none;
@@ -319,31 +309,6 @@ img{
     padding: 14px 16px;
     transition: 0.3s;
     
-}
-
-.tab button{
-    padding: 0px;
-	margin: 0px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    /* transition-duration:0.6s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    position: relative; */
-}
-
-.tab .tablinks{
-    float: left;
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    line-height: 45px;
-    display: block;
-    padding: 0px 20px;
-    transition-duration:0.6s;
-	
-    position: relative;
-    border: none;
 }
 
 .tabstudent button{
@@ -355,93 +320,14 @@ img{
 }
 
 /* Change background color of buttons on hover */
-.tabstudent button:hover {
+.tab button:hover, .tabstudent button:hover {
     background-color: #ddd;
-}
-
-.tablinks.active:hover ~ #b{
-    -moz-box-shadow: inset -5px -5px 5px white;
-    -webkit-box-shadow: inset -5px -5px 5px white;
-    box-shadow: inset -5px -5px 5px white;
 }
 
 /* Create an active/current tablink class */
 .tab button.active, .tabstudent button:active {
     background-color: #ccc;
-    border: none;
 }
-
-.tab .tablinks.active{
-	background-color: transparent;
-	transition: all 0.7s;
-    border: none;
-}
-
-.tab .tablinks:not(:only-child):after {
-	/* content: "\f105"; */
-	position: absolute;
-	right: 20px;
-	top: 10%;
-	font-size: 14px;
-	/* font-family: "Font Awesome 5 Free"; */
-	display: inline-block;
-	padding-right: 3px;
-	vertical-align: middle;
-	font-weight: 900;
-	transition: 0.5s;
-    border:none;
-}
-
-.tab .active>.tablinks:not(:only-child):after{
-    transform: rotate(90deg);
-}
-
-
-.hori-selector{
-	display:inline-block;
-	position:absolute;
-	top: 0;
-	left: 0px;
-    bottom: 10px;
-	transition-duration:0.6s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	background-color: #9f1d35;
-    box-shadow: 3px 3px 6px #888;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-}
-
-/* .hori-selector .right,
-.hori-selector .left{
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	background-color: #fff;
-	top: 0;
-}
-.hori-selector .right{
-	right: -20px;
-}
-.hori-selector .left{
-	left: -20px;
-}
-.hori-selector .right:before,
-.hori-selector .left:before{
-	content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #AC3B61;
-}
-.hori-selector .right:before{
-	top: 0;
-    right: -20px;
-}
-.hori-selector .left:before{
-	top: 0;
-    left: -20px;
-} */
 
 .tabstudent .tablinks.active{
     width: 110%;
@@ -458,16 +344,8 @@ img{
     padding: 6px 12px;
     /* border: 1px solid #ccc; */
     border-top: none;
-    width: 100vw;;
+    width: 100%;
     text-align: left;
-}
-
-.tabcontent{
-    position: fixed;
-    top:100px;
-    height:100vh;
-    overflow-y:scroll;
-    overflow-x:hidden;
 }
 
 /* use a hand cursor intead of arrow for the action buttons */
