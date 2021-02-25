@@ -18,8 +18,7 @@ block layout-content
                 // Text to be changed by js depending on the person logged in
       //- h1.Banner Hello
       //- div.Message
-      //-   div.Title Student Information
-              
+      //-   div.Title Student Information          
     body
       div.containeralt
         .tabstudent
@@ -29,6 +28,44 @@ block layout-content
         div.mainContent
           #Therapy.tabcontent
             h3 Therapy Maps
+                div.filepond
+                input(type="file" multiple="")
+                script.
+                  FilePond.registerPlugin(
+                  FilePondPluginImagePreview,
+                  FilePondPluginImageResize,
+                  FilePondPluginImageTransform
+                  );
+                  FilePond.setOptions({
+                      server:{
+                          uri:"mongodb+srv://admin:CyyuBE7j1c8BlVx2@cluster0.wbsei.mongodb.net/CatApp?retryWrites=true&w=majority",
+                          process: './process',
+                          revert: './revert',
+                          restore: './restore/',
+                          load: './load/',
+                          fetch: './fetch/'
+                      }
+                        });
+                  const inputElement = document.querySelector('input[type="file"]');
+                  const pond = FilePond.create(inputElement,{
+                  imageResizeTargetWidth:256,
+                  imageResizeTargetHeight:50,
+                  //callback
+                  onaddfile:(err,fileItem)=>{
+                  console.log(err,fileItem.getMetadata('resize'))
+                  console.info(fileItem)
+                  },
+                   onprepareFile: (fileItem, output)=>
+
+                   {
+                    const img
+                    img.src = URL.createObjectURL(output);
+                    document.body.appendChild(img);
+
+                   }
+                  });
+                .Uploadbtn
+                  button(type="submit") Upload
           #RecognitionandRevision.tabcontent
             p This the recognition and revision section
             .q1

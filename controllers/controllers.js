@@ -23,11 +23,20 @@ module.exports = {
   },
 
   login: function (app, req, res) {
-
-    return res.render("login", {
-      title: "Welcome",
-      message: "Demo Node Site."
-    });
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({})
+      .toArray(function (err, docs) {
+        console.dir(docs)
+        if (err) {
+          console.error(err);
+        }
+        return res.render("login", {
+          title: "Login",
+          Students: docs
+        });
+      });
   },
 
   viewAll: function (app, req, res) {
@@ -84,27 +93,64 @@ module.exports = {
           });
       });
 	},
-	insertClientForm: function (app, req, res) {
+	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
-    var newClientForm = req.body;
+    var clientFormID = req.body.client;
+    var targetProblem1 =req.body.targetproblem1;
+    var inputChoice1 = req.body.choice1;
+    var targetProblem1Pattern=req.body.targetproblem1pattern;
+    var targetProblem2= req.body.targetproblem2;
+    var inputChoice2= req.body.choice2;
+    var targetProblem2Pattern= req.body.targetproblem2pattern;
+    var targetProblem3 = req.body.targetproblem3;
+    var inputChoice3 = req.body.choice3;
+    var targetProblem3Pattern = req.body.targetproblem3pattern;
+    var targetProblem4 = req.body.targetproblem4;
+    var inputChoice4 = req.body.choice4;
+    var targetProblem4Pattern= req.body.targetproblem4pattern;
 	console.info(req.body)
     app
       .get("myDb")
       .collection("TherapistRecognition")
-      .insertOne(newClientForm, function (err, dbResp) {
+      .insertOne(clientFormID,targetProblem1,inputChoice1,targetProblem1Pattern,targetProblem2,inputChoice2,targetProblem2Pattern,targetProblem3,inputChoice3,targetProblem3Pattern,targetProblem4,inputChoice4,targetProblem4Pattern, function (err, dbResp) {
         if (err) {
           console.error(err);
         }
+		else
+		console.log(result[0].body)
       });
   },
 
   studentHome: function (app, req, res) {
+    console.info("Student home controller");
+    let SID = req.params.SID;
+    var o_id = new ObjectId(SID);
+
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({_id: o_id})
+
+      .toArray(function (err, docs) {
+        if (err) {
+          console.error(err);
+        }
+        console.dir(docs);
+        return res.render("studentHome", {
+          title: `${docs[0].Lname}`,
+          Student: docs[0]
+          //login: req.session.login,
+          });
+      });
+	}
+
+  /*studentHome: function (app, req, res) {
     console.info("Student Home");
     return res.render("studentHome", {
       title: "Welcome",
       message: "Demo Node Site."
     });
-  },
+  },*/
 }
 
 

@@ -29,9 +29,12 @@ module.exports = (app) => {
   });
 
 
-  router.get("/studentHome", (req, res) => {
+  router.get("/studentHome/:SID", (req, res) => {
     myControllers.studentHome(app, req, res);
   });
-
+  router.post("/recognition", (req, res) => {
+    
+    myControllers.Recognition(app, req, res);
+  });
   return router;
 };
