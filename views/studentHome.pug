@@ -125,18 +125,14 @@ block layout-content
               ProgressBar3.style.width =this.value+ "%";
               }
           #Changework.tabcontent
-            div.changeworkTable
               h3 ChangeWork                      
               div.overall-changework
-                div.container-changework
-                  div.row-changework
-                    div.col-12
                       div.input-group
                         input.form-control#helpfulThing(type="text", required)
                         div.input-group-append
                           button(type="button", class="btn btn-add", onclick="addItem()") Add something that helps you
                           button(type="button", class="btn btn-remove", onClick="removeItem()") Remove something from the list
-                        ul#dynamic-list
+                      ul#dynamic-list
     footer
       div.fcontainer
         div.row
