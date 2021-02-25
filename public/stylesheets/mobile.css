@@ -106,6 +106,18 @@ button[type="submit"] {
 }
 
 
+.form-group{
+    display: flex
+}
+
+.form-group .form-wrapper:first-child{
+    margin-right: 20px;
+}
+
+.form-group .form.wrapper{
+    margin-bottom: 17px;
+}
+
 .logoutLink {
     /* Don't set flex-basis as wrap will overrule it just stop grow and shrink */
     flex: 0;

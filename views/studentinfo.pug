@@ -81,10 +81,12 @@ block layout-content
           div.addclientform
             form(action="/recognition" method="POST")
               div.form-group
-                input(type="text" name="Fname" placeholder="First Name" required="")
-                br
-                input(type="text" name="Lname" placeholder="Last Name" required="")
-                br
+                div.form-wrapper
+                  input(type="text" name="Fname" placeholder="First Name" required="")
+                  br
+                div.form-rapper
+                  input(type="text" name="Lname" placeholder="Last Name" required="")
+                  br
               p Please Enter a problem area and question to push to the students application
               div.target-wrapper
                 input(type="text" name="target problem1" placeholder="Target Problem" required="")
