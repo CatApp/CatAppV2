@@ -112,8 +112,8 @@ module.exports = {
           console.error(err);
         }
 		else
-		console.log(result[0].body)
-		//res.redirect("/studentinfo/:SID")
+		//console.log(result[0].body)
+		res.redirect("/")
 
       });
   },
