@@ -100,15 +100,21 @@ module.exports = {
 	var inputChoice4 = req.body.choice4;
 	var targetProblem4Pattern= req.body.targetproblem4pattern;
 	console.info(req.body)
+	var newEntry=req.body;
     app
       .get("myDb")
       .collection("TherapistRecognition")
-      .insertOne(clientFormID,targetProblem1,inputChoice1,targetProblem1Pattern,targetProblem2,inputChoice2,targetProblem2Pattern,targetProblem3,inputChoice3,targetProblem3Pattern,targetProblem4,inputChoice4,targetProblem4Pattern, function (err, dbResp) {
+	  .insertOne(newEntry,function(err,dbRes){
+      
+	  
+     // .insertOne(clientFormID,targetProblem1,inputChoice1,targetProblem1Pattern,targetProblem2,inputChoice2,targetProblem2Pattern,targetProblem3,inputChoice3,targetProblem3Pattern,targetProblem4,inputChoice4,targetProblem4Pattern, function (err, dbResp) {
         if (err) {
           console.error(err);
         }
 		else
-		console.log(result[0].body)
+		//console.log(result[0].body)
+		//res.redirect("/studentinfo/:SID")
+
       });
   },
 
