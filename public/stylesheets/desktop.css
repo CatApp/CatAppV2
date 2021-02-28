@@ -282,6 +282,7 @@ img{
     position:fixed;
     margin-top: 60px !important;
     top:0px;
+    z-index:1;
     
     /* overflow: hidden;
 	border: 1px solid #ccc;
@@ -409,6 +410,7 @@ img{
     box-shadow: 3px 3px 6px #888;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
+    
 }
 
 /* .hori-selector .right,
@@ -468,6 +470,169 @@ img{
     height:100vh;
     overflow-y:scroll;
     overflow-x:hidden;
+    margin-bottom:200px;
+    margin-top: 8px;
+    
+}
+
+.addclientform, .changeworkTable, .recog, .filepond, .home{
+    /* width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 62px 55px 90px;
+    align-items: center; */
+    width:80%;
+	padding:30px;
+	margin:40px auto;
+    margin-bottom: 200px;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+
+}
+
+
+
+form input[type="submit"],
+form input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: #43D1AF;
+	border-bottom: 2px solid #30C29E;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: #fff;
+}
+form input[type="submit"]:hover,
+form input[type="button"]:hover{
+	background: #2EBC99;
+}
+
+form{
+    align-items: center;
+}
+
+#AddClient
+{
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+
+}
+
+.form-group .form-wrapper:first-child{
+    margin-right: 20px;
+}
+
+.form-group .form-wrapper{
+    margin-bottom: 0px;
+}
+
+.form-wrapper {
+    margin-bottom: 17px;
+}
+
+.form-wrapper .form-control {
+    /* border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-family: muli-bold;
+    background: 0 0; */
+    width: 100%;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    border-radius: 13px;
+    padding: 10px 30px 9px 22px;
+    margin-bottom: 20px;
+    
+}
+
+.form-wrapper label{
+    font-size: 15px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+.form-wrapper label.checkbox{
+    font-size: 15px;
+    padding-bottom: 0px;
+    padding-top:4px;
+}
+
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 25px;
+    
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+
+.checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /* use a hand cursor intead of arrow for the action buttons */

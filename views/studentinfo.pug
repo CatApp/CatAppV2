@@ -12,6 +12,7 @@ block layout-content
             li  
               a#therapistNameText
                //script checkTherapist(Student,Therapist);
+                
                           
         div.nav-right
           ul
@@ -21,20 +22,22 @@ block layout-content
         div.hori-selector#b
           .left
           .right
-        button.tablinks(onclick="openTab(event, 'Home')" onmouseover="onhoverTabs('Home')") Home
+        button.tablinks(onclick="openTab(event, 'Home')" ) Home
         button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
         button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
         button.tablinks(onclick="openTab(event, 'AddClient')") Add Client Form 
+        script onloadTab()
     body
         // Tab content
         #Home.tabcontent 
-          h3="Information for student: " + Student.Fname + "." +  Student.Lname
+          div.home
+            h3="Information for student: " + Student.Fname + "." +  Student.Lname
         
         #Therapy.tabcontent
-          h3 Therapy Maps
-          p therapy section, here you can upload any visualisations you might have done recently.
-            div.filepond
+          div.filepond
+            h3 Therapy Maps
+            p therapy section, here you can upload any visualisations you might have done recently.
             input(type="file" multiple="")
             script.
               FilePond.registerPlugin(
@@ -59,11 +62,12 @@ block layout-content
               });
             .Uploadbtn
               button(type="submit") Upload
-          console.log('tab content')
+              console.log('tab content')
           
         #RecognitionandRevision.tabcontent
-          h3 Recognition
-          p This the recognition and revision section
+          div.recog
+            h3 Recognition
+            p This the recognition and revision section
         #Changework.tabcontent
           div.changeworkTable
                 p
@@ -77,70 +81,72 @@ block layout-content
                 script changeworkAdd()
         
         #AddClient.tabcontent
-          h3 Add Client Questions
+          
           div.addclientform
-            form(action="/recognition" method="POST")
+            h3 Add Client Questions
+            form(action="" method="POST")
               div.form-group
                 div.form-wrapper
-                  input(type="text" name="Fname" placeholder="First Name" required="")
+                  input(type="text" class="form-control" name="Fname" placeholder="First Name" required="")
                   br
-                div.form-rapper
-                  input(type="text" name="Lname" placeholder="Last Name" required="")
+                div.form-wrapper
+                  input(type="text" class="form-control" name="Lname" placeholder="Last Name" required="")
                   br
-              p Please Enter a problem area and question to push to the students application
-              div.target-wrapper
-                input(type="text" name="target problem1" placeholder="Target Problem" required="")
-                br
-                input(type="text" name="target problem1 pattern (optional)" placeholder="Target Problem: Question One" required="")
-                br
+              div.form-group
+                div.form-wrapper
+                  label(for="target problem1") Target Problem 1
+                  input(type="text" class="form-control" name="target problem1" placeholder="Target Problem" required="")
+                  br
+                div.form-wrapper
+                  label(for="target problem1") Target Question 1
+                  input(type="text" class="form-control" name="target problem1 pattern (optional)" placeholder="" required="")
+                  br
+              div.form-wrapper
+                label(class="checkbox") Click to generate a SliderBar
+                  input(type="checkbox"  name="choice1" ) 
+                  span(class="checkmark")
 
-              div.radio-wrapper
-                input(type="radio" id="slider-bar" name="choice1" value="slider-bar") 
-                label(for="slider-bar")  Click above to generate a SliderBar on student's side
-                br
-                input(type="radio" id="textbox" name="choice1" value="textbox") 
-                label(for="textbox") Click above to generate a Textbox on student's side
-                br
+              div.form-group
+                div.form-wrapper
+                  label(for="target problem2") Target Problem 2
+                  input(type="text" class="form-control" name="target problem2" placeholder="" required="")
+                  br
+                div.form-wrapper
+                  label(for="target problem2") Target Question 2
+                  input(type="text" class="form-control" name="target problem2 pattern (optional)" placeholder="" required="")
+                  br
+              div.form-wrapper
+                label(class="checkbox") Click to generate a SliderBar
+                  input(type="checkbox"  name="choice2" ) 
+                  span(class="checkmark")
 
-              div.target-wrapper
-                input(type="text" name="target problem2" placeholder="target problem two" required="")
-                br
-                input(type="text" name="target problem2 pattern (optional)" placeholder="target problem two pattern (optional)" required="")
-                br
+              div.form-group
+                div.form-wrapper
+                  label(for="target problem3") Target Problem 3
+                  input(type="text" class="form-control" name="target problem3" placeholder="" required="")
+                  br
+                div.form-wrapper
+                  label(for="target problem3") Target Question 3
+                  input(type="text" class="form-control" name="target problem3 pattern (optional)" placeholder="" required="")
+                  br
+              div.form-wrapper
+                label(class="checkbox") Click to generate a SliderBar
+                  input(type="checkbox"  name="choice3" ) 
+                  span(class="checkmark")
 
-              div.radio-wrapper
-                input(type="radio" id="slider-bar" name="choice2" value="slider-bar")
-                label(for="slider-bar") Click above to generate a SliderBar on student's side
-                br
-                input(type="radio" id="textbox" name="choice2" value="textbox")
-                label(for="textbox") Click above to generate a Textbox on student's side
-                br
-
-              div.target-wrapper
-                input(type="text" name="target problem3" placeholder="target problem three" required="")
-                br
-                input(type="text" name="target problem3 pattern (optional)" placeholder="target problem three pattern (optional)" required="")
-                br
-
-              div.radio-wrapper
-                input(type="radio" id="slider-bar" name="choice3" value="slider-bar")
-                label(for="slider-bar") Click above to generate a SliderBar on student's side
-                br
-                input(type="radio" id="textbox" name="choice3" value="textbox")
-                label(for="textbox") Click above to generate  a Textbox on student's side
-                br
-              div.target-wrapper
-                input(type="text" name="target problem4" placeholder="target problem four" required="")
-                br
-                input(type="text" name="target problem4 pattern optional" placeholder="target problem four pattern (optional) " required="")
-                br
-              div.radio-wrapper
-                input(type="radio" id="slider-bar" name="choice4" value="slider-bar")
-                label(for="slider-bar") Click above to generate a SliderBar on student's side
-                br
-                input(type="radio" id="textbox" name="choice4" value="textbox")
-                label(for="textbox") Click above to generate a TextBox on student's side
-                br
+              div.form-group
+                div.form-wrapper
+                  label(for="target problem4") Target Problem 4
+                  input(type="text" class="form-control" name="target problem4" placeholder="" required="")
+                  br
+                div.form-wrapper
+                  label(for="target problem3") Target Question 4
+                  input(type="text" class="form-control" name="target problem4 pattern (optional)" placeholder="" required="")
+                  br
+              div.form-wrapper
+                label(class="checkbox") Click to generate a SliderBar
+                  input(type="checkbox"  name="choice4" ) 
+                  span(class="checkmark")
               
               input(type="submit")
               .script 

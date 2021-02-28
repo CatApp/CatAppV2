@@ -1,4 +1,5 @@
 // VIEW CONTROLLER
+//@ts-check
 
 var ObjectId = require("mongodb").ObjectId;
 
@@ -76,6 +77,9 @@ module.exports = {
     let SID = req.params.SID;
     var o_id = new ObjectId(SID);
 
+    let TID = req.params.TID;
+    var t_id = new ObjectId(TID)
+
     app
       .set("myDb")
       .collection("Students")
@@ -92,7 +96,26 @@ module.exports = {
           //login: req.session.login,
           });
       });
+
+    app
+      .set("myDb")
+      .collection("Therapists")
+      .find({_id: t_id})
+
+      .toArray(function (err, doct) {
+        if (err) {
+          console.error(err);
+        }
+        console.dir(doct);
+        return res.render("studentinfo", {
+          //title: `${doct[0].Lname}`,
+          Therapist: doct[0]
+          //login: req.session.login,
+          });
+      });
 	},
+
+
 	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
     /*var clientFormID = req.body.client;

@@ -24,6 +24,27 @@ function navHighlight(elem, home, active) {
     navHighlight('.mainNav ul li a', 'index.html', 'current'); /* menu link selector, home page, highlight class */
 })();
 
+function onloadTab()
+{ 
+  var i,tablinks,anyactive;
+  anyactive = false;
+  tablinks = document.getElementsByClassName("tablinks");
+  for(i = 0; i < tablinks.length; i++)
+  {
+    if(tablinks[i].classList.contains('active'))
+    {
+      anyactive = true;
+    }
+  }
+
+  // if(anyactive = false)
+  // {
+  //   var home = tablinks.namedItem#
+  //   home.style.display = "block";
+  //   home.className += " active";
+  // }
+
+}
 
 function openTab(evt, findTab) {
   // Declare all variables
@@ -88,8 +109,8 @@ function onhoverTabs(tab)
 }
 
 
-// function checkTherapist(Student,Therapist){
-//   var S =$(Student.TID)
+// function checkTherapist(StudentTID,Therapists){
+//   var S =$(StudentTID)
 //   var T = Array.from($(Therapist))
 //   var Result
 
