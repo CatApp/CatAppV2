@@ -26,9 +26,10 @@ function navHighlight(elem, home, active) {
 
 function onloadTab()
 { 
-  var i,tablinks,anyactive;
+  var i,tablinks,anyactive,home;
   anyactive = false;
   tablinks = document.getElementsByClassName("tablinks");
+  home = document.getElementById("Home")
   for(i = 0; i < tablinks.length; i++)
   {
     if(tablinks[i].classList.contains('active'))
@@ -37,12 +38,35 @@ function onloadTab()
     }
   }
 
-  // if(anyactive = false)
+  if(!anyactive)
+  {
+    for(i = 0; i < tablinks.length; i++)
+    {
+      if(tablinks[i].id.includes('H'))
+      {
+        tablinks[i].className += " active";
+        
+        var activeItemNewAnim = tablinks[i];
+
+        home.style.display = "block"
+        
+      }
+    }
+  }
+
+  // for(i = 0; i < tablinks.length; i++)
   // {
-  //   var home = tablinks.namedItem#
-  //   home.style.display = "block";
-  //   home.className += " active";
+  //   if(tablinks[i].classList.contains('active'))
+  //   {
+  //     var activeItemNewAnim = tablinks[i];
+  //   }
   // }
+  var activeWidthNewAnimWidth = $(activeItemNewAnim).innerWidth();
+  var itemPosNewAnimLeft = $(activeItemNewAnim).position();
+  $(".hori-selector").css({
+    "left":itemPosNewAnimLeft.left + "px",
+    "width": activeWidthNewAnimWidth + "px"
+  });
 
 }
 
@@ -106,21 +130,19 @@ function onhoverTabs(tab)
 }
 
 
-// function checkTherapist(StudentTID,Therapists){
-//   var S =$(StudentTID)
-//   var T = Array.from($(Therapist))
-//   var Result
+function checkTherapist(StudentTID,Therapists){
+  
 
-//   Therapist.forEach(element => {
-
-//     if(T.TID = S)
-//     {
-//       Result = T.Fname + T.Lname;
-//     }
+  for (let i = 0; i< Therapists.length; i++) {
     
-//   });
+    if(Therapists[i].TID = StudentTID)
+    {
+      return Therapists[i].Fname;
+    }
+    
+  }
 
-// }
+}
 
 
 // Add products to <table>

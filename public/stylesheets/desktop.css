@@ -157,9 +157,9 @@ img{
 	color: white;
 	text-align:center;
 	text-decoration: none;
-	height: 100%;
+	height: inherit;
 	margin: 0;
-    padding: 14px 18px;
+    padding: 10px 14px;
 }
 
 
@@ -183,27 +183,28 @@ img{
 	margin-top: 0;
 	margin-bottom: 0;
 	max-width: 1;
+    float: right;
 }
 
 .navbar li{
-	display: flex;
-	float:left;
+	display: inline-block;
 	height: 100%;
 	line-height: 30px;
 	padding: 2px;
 }
 
 .nav-right {
-	float: right;
+	
 	height: 100%;
 	line-height: inherit;
-	right: 0;
 	position: absolute;
+    right:0px;
+    display: inline-block;
 }
 
-.nav-right li{
-	float: right;
-}
+/* .nav-right li{
+	
+} */
 
 .nav-right li a{
     display: inline-block;
@@ -215,9 +216,12 @@ img{
     padding: 10px 14px;
 }
 
+
+
 .fas.fa-search
 {
     font-size: 18px;
+
 }
 
 .logoutLink{
@@ -254,7 +258,7 @@ img{
 }
 
 .navbar a.logoutLink{
-	float:right;
+	
 	height: 100%;
 }
 
@@ -817,36 +821,103 @@ footer {
 	text-decoration: underline;
 }
 .Uploadbtn button{
-	display:inline-block;
-	padding:0.5em 3em;
-	border:0.16em solid #ffffff67;
-	margin:0 0.3em 0.3em 0;
-	box-sizing: border-box;
-	text-decoration:none;
-	text-decoration-color: #ffffff;
-	text-transform:uppercase;
-	font-family:'Roboto',sans-serif;
-	font-weight:400;
-	color:#FFFFFF;
-	text-align:center;
-	transition: all 0.15s;
-	background-color: #bbbbbb60;
+	width: 12rem;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
 }
-.Uploadbtn button:hover{
+
+.Uploadbtn button .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #9A1750;
+    border-radius: 1.625rem;
+}
+
+.Uploadbtn button .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+
+}
+
+.Uploadbtn button .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.Uploadbtn button .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.Uploadbtn button:hover .button-text {
+    color: #fff;
+}
+
+.Uploadbtn button:hover .circle {
+    width: 100%;
+}
+
+.Uploadbtn button .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+/* .Uploadbtn button:hover{
 	color:#dddddd00;
 	border-color:#DDDDDD;
-}
-.Uploadbtn button:active{
+} */
+/* .Uploadbtn button:active{
 	color:#ffffff;
 	border-color:#bbbbbb04;
 	background-color: #ffffff;
 	text-decoration-color:  #ffffff67;
-}
+} */
 @media all and (max-width:30em){
-	.Uploadbtn button{
+	/* .Uploadbtn button{
 		display:block;
 		margin:0.4em auto;
-	}
+	} */
 }
 
 

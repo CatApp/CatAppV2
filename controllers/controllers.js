@@ -2,6 +2,8 @@
 //@ts-check
 
 var ObjectId = require("mongodb").ObjectId;
+var db = require("mongodb").ObjectID;
+
 
 
 module.exports = {
@@ -24,11 +26,20 @@ module.exports = {
   },
 
   login: function (app, req, res) {
-
-    return res.render("login", {
-      title: "Welcome",
-      message: "Demo Node Site."
-    });
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({})
+      .toArray(function (err, docs) {
+        console.dir(docs)
+        if (err) {
+          console.error(err);
+        }
+        return res.render("login", {
+          title: "Login",
+          Students: docs
+        });
+      });
   },
 
   viewAll: function (app, req, res) {
@@ -67,9 +78,8 @@ module.exports = {
     console.info("Student info controller");
     let SID = req.params.SID;
     var o_id = new ObjectId(SID);
-
     let TID = req.params.TID;
-    var t_id = new ObjectId(TID)
+    
 
     app
       .set("myDb")
@@ -83,33 +93,55 @@ module.exports = {
         console.dir(docs);
         return res.render("studentinfo", {
           title: `${docs[0].Lname}`,
-          Student: docs[0]
+          Student: docs[0],
+          TID: `${docs[0].TID}`
           //login: req.session.login,
           });
       });
 
+
+    
     app
       .set("myDb")
       .collection("Therapists")
-      .find({_id: t_id})
-
-      .toArray(function (err, doct) {
+      .find({})
+      .toArray(function (err, docs) {
         if (err) {
-          console.error(err);
+          console.error(err + "Error");
         }
-        console.dir(doct);
+        console.dir(docs);
+
         return res.render("studentinfo", {
-          //title: `${doct[0].Lname}`,
-          Therapist: doct[0]
+          //title: `${docs[0].Lname}`,
+          
+          
+          Therapists: docs
           //login: req.session.login,
           });
       });
 	},
 
+  // studentinfo2: function (app, req, res) {
+  //   console.info("Student info controller 2");
+  //   app
+  //     .set("myDb")
+  //     .collection("Therapists")
+  //     .find({})
+  //     .toArray(function (err, docs) {
+  //       console.dir(docs)
+  //       if (err) {
+  //         console.error(err);
+  //       }
+  //       return res.render("studentinfo", {
+  //         Therapists: docs
+  //       });
+  //     });
+    
+  // },
 
 	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
-    var clientFormID = req.body.client;
+    /*var clientFormID = req.body.client;
 	var targetProblem1 =req.body.targetproblem1;
 	var inputChoice1 = req.body.choice1;
 	var targetProblem1Pattern=req.body.targetproblem1pattern;
@@ -121,7 +153,7 @@ module.exports = {
 	var targetProblem3Pattern = req.body.targetproblem3pattern;
 	var targetProblem4 = req.body.targetproblem4;
 	var inputChoice4 = req.body.choice4;
-	var targetProblem4Pattern= req.body.targetproblem4pattern;
+	var targetProblem4Pattern= req.body.targetproblem4pattern;*/
 	console.info(req.body)
 	var newEntry=req.body;
     app
@@ -135,23 +167,42 @@ module.exports = {
           console.error(err);
         }
 		else
-		//console.log(result[0].body)
-		res.redirect("/")
+		console.log(result[0].body)
+		//res.redirect("/studentinfo/:SID")
 
       });
   },
 
   studentHome: function (app, req, res) {
+    console.info("Student home controller");
+    let SID = req.params.SID;
+    var o_id = new ObjectId(SID);
+
+    app
+      .set("myDb")
+      .collection("Students")
+      .find({_id: o_id})
+
+      .toArray(function (err, docs) {
+        if (err) {
+          console.error(err);
+        }
+        console.dir(docs);
+        return res.render("studentHome", {
+          title: `${docs[0].Lname}`,
+          Student: docs[0]
+          //login: req.session.login,
+          });
+      });
+	}
+
+  /*studentHome: function (app, req, res) {
     console.info("Student Home");
     return res.render("studentHome", {
       title: "Welcome",
       message: "Demo Node Site."
     });
-  },
-  //Recognition: function (app,req,res){
-	//console.info("hello");
-    //console.info(req.body.client);
- // }
+  },*/
 }
 
 

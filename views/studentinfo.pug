@@ -10,34 +10,34 @@ block layout-content
         div.nav-left
           ul
             li  
-              a#therapistNameText
-               //script checkTherapist(Student,Therapist);
+              a#therapistNameText Welcome Therapist Name!
                 
-                          
         div.nav-right
           ul
+            li
+              a.TherapistID="ID: " + Student.TID
             li        
               a.logoutLink(href="/login") Logout
       .tab
         div.hori-selector#b
           .left
           .right
-        button.tablinks(onclick="openTab(event, 'Home')" ) Home
+        button.tablinks(onclick="openTab(event, 'Home')" id = 'H' ) Home
         button.tablinks(onclick="openTab(event, 'Therapy')") Therapy Maps
         button.tablinks(onclick="openTab(event, 'RecognitionandRevision')")  Recognition and Revision
         button.tablinks(onclick="openTab(event, 'Changework')") Change-Work
         button.tablinks(onclick="openTab(event, 'AddClient')") Add Client Form 
-        script onloadTab()
     body
         // Tab content
         #Home.tabcontent 
           div.home
             h3="Information for student: " + Student.Fname + "." +  Student.Lname
-        
+                  
+
         #Therapy.tabcontent
           div.filepond
-            h3 Therapy Maps
-            p therapy section, here you can upload any visualisations you might have done recently.
+            h3="Therapy Maps for " + Student.Fname + " " + Student.Lname
+            p Here you can upload therapy maps for the designated student
             input(type="file" multiple="")
             script.
               FilePond.registerPlugin(
@@ -61,7 +61,11 @@ block layout-content
               }*/
               });
             .Uploadbtn
-              button(type="submit") Upload
+              button(type="submit" onclick="")
+                span(class="circle" aria-hidden="true")
+                  span(class="icon arrow")
+                span(class="button-text") Upload
+              
               console.log('tab content')
           
         #RecognitionandRevision.tabcontent
@@ -151,3 +155,4 @@ block layout-content
               input(type="submit")
               .script 
                 console.info("submitted")
+  script onloadTab();
