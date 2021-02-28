@@ -9,6 +9,12 @@ body {
 .container {
     width: 100%;
     min-width: 320px;
+    top: 0px;
+	bottom: 150px;
+    position: absolute;
+	overflow:auto;
+    text-decoration: none;
+    min-height: 2em;
 }
 
 header {
@@ -38,13 +44,30 @@ header {
     padding: 8px 0;
 }
 
+.navbar {
+	background-color:#9f1d35;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	left:0;
+	width: 100%; /* Full width */
+	height: 60px;
+	line-height: 1.5;
+	display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
 img {
     width: 60px;
     padding-right: 5px;
 }
 
 .mainContent {
-    margin: 0 10px;
+    max-width: 1;
+    padding: 0 5px;
+    margin: auto;
+    min-height: 500px;
+    flex-grow: 1;
 }
 
 .news {
@@ -153,17 +176,36 @@ button[type="submit"] {
 }
 
 footer {
-    background-color: #011424;
+    background-color: #420f3c;
     color: #fff;
-    padding: 0 10px;
+	padding: 20px;
+	position: fixed;
+	display: block;
+	flex-shrink: 0;
+	padding: 20px;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 150px;
 }
 
-footer .row {
-    display: flex;
+.fcontainer{
+	width: 750px;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: inherit;
+    padding-bottom: 20px;
+    margin-bottom: auto;
+
+}
+
+.footer .row {
+    display: block;
     flex-direction: column;
 }
-footer .row address {
-    padding: 15px 0 5px 5px;
+address {
+    display: none;
 }
 .footerSocialLinks {
     flex-basis: 20%;
@@ -180,14 +222,17 @@ footer .row address {
     color: #fff;
     font-size: 1.4rem;
 }
-.footerLinks {
-    display: flex;
+.footerLinks ul {
     list-style: none;
     padding-left: 0;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
+	display: inline;
+
 }
 .footerLinks li {
-    border-right: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	list-style: none;
+	display:inline-flex;
 }
 .footerLinks li:last-child {
     border-right: none;
@@ -195,11 +240,11 @@ footer .row address {
 .footerLinks li a {
     font-size: 0.8rem;
     width: 100%;
-    display: inline-block;
+    display: block;
     padding: 2px 5px;
     text-decoration: none;
     color: #fff;
 }
 .footerLinks li a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
