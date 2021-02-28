@@ -1,4 +1,4 @@
-//@ts-check
+
 (function(){
 $(window).on("resize", function(ev) {
   //console.info(window.innerWidth);
@@ -67,7 +67,6 @@ function openTab(evt, findTab) {
   document.getElementById(findTab).style.display = "block";
   evt.currentTarget.className += " active";
 
-
   var tabsNewAnim = $('.tab');
   var selectorNewAnim = tablinks.length;
   // var activeItemNewAnim = tabsNewAnim.find('tablinks active')
@@ -93,8 +92,6 @@ function openTab(evt, findTab) {
   //     "width": activeWidthNewAnimWidth + "px"
   //   });
   // });
-
-
 }
 
 function onhoverTabs(tab)

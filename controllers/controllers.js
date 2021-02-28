@@ -24,20 +24,11 @@ module.exports = {
   },
 
   login: function (app, req, res) {
-    app
-      .set("myDb")
-      .collection("Students")
-      .find({})
-      .toArray(function (err, docs) {
-        console.dir(docs)
-        if (err) {
-          console.error(err);
-        }
-        return res.render("login", {
-          title: "Login",
-          Students: docs
-        });
-      });
+
+    return res.render("login", {
+      title: "Welcome",
+      message: "Demo Node Site."
+    });
   },
 
   viewAll: function (app, req, res) {
@@ -118,7 +109,7 @@ module.exports = {
 
 	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
-    /*var clientFormID = req.body.client;
+    var clientFormID = req.body.client;
 	var targetProblem1 =req.body.targetproblem1;
 	var inputChoice1 = req.body.choice1;
 	var targetProblem1Pattern=req.body.targetproblem1pattern;
@@ -130,7 +121,7 @@ module.exports = {
 	var targetProblem3Pattern = req.body.targetproblem3pattern;
 	var targetProblem4 = req.body.targetproblem4;
 	var inputChoice4 = req.body.choice4;
-	var targetProblem4Pattern= req.body.targetproblem4pattern;*/
+	var targetProblem4Pattern= req.body.targetproblem4pattern;
 	console.info(req.body)
 	var newEntry=req.body;
     app
@@ -144,42 +135,23 @@ module.exports = {
           console.error(err);
         }
 		else
-		console.log(result[0].body)
-		//res.redirect("/studentinfo/:SID")
+		//console.log(result[0].body)
+		res.redirect("/")
 
       });
   },
 
   studentHome: function (app, req, res) {
-    console.info("Student home controller");
-    let SID = req.params.SID;
-    var o_id = new ObjectId(SID);
-
-    app
-      .set("myDb")
-      .collection("Students")
-      .find({_id: o_id})
-
-      .toArray(function (err, docs) {
-        if (err) {
-          console.error(err);
-        }
-        console.dir(docs);
-        return res.render("studentHome", {
-          title: `${docs[0].Lname}`,
-          Student: docs[0]
-          //login: req.session.login,
-          });
-      });
-	}
-
-  /*studentHome: function (app, req, res) {
     console.info("Student Home");
     return res.render("studentHome", {
       title: "Welcome",
       message: "Demo Node Site."
     });
-  },*/
+  },
+  //Recognition: function (app,req,res){
+	//console.info("hello");
+    //console.info(req.body.client);
+ // }
 }
 
 
