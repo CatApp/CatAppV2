@@ -119,16 +119,29 @@ module.exports = {
   },
 
   studentHome: function (app, req, res) {
-    console.info("Student Home");
-    return res.render("studentHome", {
-      title: "Welcome",
-      message: "Demo Node Site."
+    console.info("View All controller");
+    /*let TP1 = req.params.SID;
+    let TP2 = req.params.SID;
+    let TP3 = req.params.SID;*/
+    app
+      .set("myDb")
+      .collection("TherapistRecognition")
+      .find({})
+      .toArray(function (err, docs) {
+        console.dir(docs[4])//or `$docs[0].targetproblem1pattern`
+        if (err) {
+          console.error(err);
+        }
+        return res.render("studentHome", {
+          title: `${docs[4].targetproblem1pattern}`,
+          TherapistRecognition: docs
     });
   },
   //Recognition: function (app,req,res){
 	//console.info("hello");
     //console.info(req.body.client);
  // }
+      )}
 }
 
 
