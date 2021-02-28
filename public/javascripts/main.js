@@ -185,8 +185,9 @@ function addItem() {
   changeworkli.classList.add("changework");
   //testList.value = helpfulThing.value;
 	changeworkli.setAttribute('id', helpfulThing.value);
-	 changeworkli.appendChild(document.createTextNode(helpfulThing.value));
+	changeworkli.appendChild(document.createTextNode(helpfulThing.value));
 	changeworkul.appendChild(changeworkli);
+  helpfulThing.value = "";
 }
 
 
