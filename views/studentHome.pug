@@ -14,7 +14,7 @@ block layout-content
             li        
               a.logoutLink(href="/login") Logout
             li  
-              a#StudentNameText Student name
+              a#StudentNameText J SHAW
                 // Text to be changed by js depending on the person logged in
       //- h1.Banner Hello
       //- div.Message
@@ -170,12 +170,16 @@ block layout-content
           #Changework.tabcontent
               h3 ChangeWork                      
               div.overall-changework
+              form(action="/changeWork" method="POST")
                       div.input-group
                         input.form-control#helpfulThing(type="text", required)
                         div.input-group-append
                           button(type="button", class="btn btn-add", onclick="addItem()") Add something that helps you
                           button(type="button", class="btn btn-remove", onClick="removeItem()") Remove something from the list
                       ul#dynamic-list
+                      input(type="submit")
+
+
     footer
       div.fcontainer
         div.row
