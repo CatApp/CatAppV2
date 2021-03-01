@@ -172,38 +172,50 @@ module.exports = {
 
       });
   },
-
-  studentHome: function (app, req, res) {
-    console.info("Student home controller");
-    let SID = req.params.SID;
-    var o_id = new ObjectId(SID);
+  InsertChangeWork: function (app, req, res){
+    var newchange=req.body;
+    console.log(req.body)
 
     app
-      .set("myDb")
-      .collection("Students")
-      .find({_id: o_id})
+    .get("myDb")
+    .collection("Change-works")
+    .insertOne(newchange,function(err,dbRes){
+      if (err) {
+        console.error(err);
+      }
+      else
 
+      console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+      res.redirect("/studentHome")
+
+    });
+  },
+  studentHome: function (app, req, res) {
+    console.info("View All controller");
+    /*let TP1 = req.params.SID;
+    let TP2 = req.params.SID;
+    let TP3 = req.params.SID;*/
+    app
+      .set("myDb")
+      .collection("TherapistRecognition")
+      .find({})
       .toArray(function (err, docs) {
+        console.dir(docs[0])//or `$docs[0].targetproblem1pattern`
         if (err) {
           console.error(err);
         }
-        console.dir(docs);
         return res.render("studentHome", {
-          title: `${docs[0].Lname}`,
-          Student: docs[0]
-          //login: req.session.login,
-          });
-      });
-	}
-
-  /*studentHome: function (app, req, res) {
-    console.info("Student Home");
-    return res.render("studentHome", {
-      title: "Welcome",
-      message: "Demo Node Site."
+          title:"studentHome",
+          TherapistRecognition: docs
     });
-  },*/
+  }
+  //Recognition: function (app,req,res){
+	//console.info("hello");
+    //console.info(req.body.client);
+ // }
+ 
+      )}
+
+
+
 }
-
-
-
