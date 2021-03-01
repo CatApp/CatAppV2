@@ -72,10 +72,26 @@ block layout-content
           div.recog
             h3 Recognition
             p This the recognition and revision section
+            table#recog
+              tbody
+                tr
+                  th="Student ID"
+                  th="Question"
+                  th="Answer" 
+                  th="Last Submitted"
+                tr
+                  td
+                    a=Student.SID
+                  td
+                    a="Would exposure to the dark help?"
+                  td
+                    a="60"
+                  td
+                    a="01/03/2021"
         #Changework.tabcontent
           div.changeworkTable
                 p
-                  | Example Text
+                  | Changework List
                 table#changework
                   tbody
                     tr
