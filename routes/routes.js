@@ -36,5 +36,8 @@ module.exports = (app) => {
     
     myControllers.Recognition(app, req, res);
   });
+  router.post("/changeWork",(req, res)=>{
+myControllers.InsertChangeWork(app,req,res);
+  });
   return router;
 };

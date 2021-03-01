@@ -117,7 +117,24 @@ module.exports = {
 
       });
   },
+  InsertChangeWork: function (app, req, res){
+    var newchange=req.body;
+    console.log(req.body)
 
+    app
+    .get("myDb")
+    .collection("Change-works")
+    .insertOne(newchange,function(err,dbRes){
+      if (err) {
+        console.error(err);
+      }
+      else
+
+      console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+      res.redirect("/studentHome")
+
+    });
+  },
   studentHome: function (app, req, res) {
     console.info("View All controller");
     /*let TP1 = req.params.SID;
@@ -133,16 +150,17 @@ module.exports = {
           console.error(err);
         }
         return res.render("studentHome", {
-          title: `${docs[4].targetproblem1pattern}`,
+          title:"studentHome",
           TherapistRecognition: docs
     });
-  },
+  }
   //Recognition: function (app,req,res){
 	//console.info("hello");
     //console.info(req.body.client);
  // }
+ 
       )}
+
+
+
 }
-
-
-

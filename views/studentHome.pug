@@ -69,7 +69,7 @@ block layout-content
           #RecognitionandRevision.tabcontent
             p This the recognition and revision section
             .q1
-              p1=TherapistRecognition[4].targetproblem1pattern
+              p1=TherapistRecognition[0].targetproblem1pattern
             .SliderBar
               input#slider(type='range' min='0' max='100' value='50')
               #selector
@@ -77,7 +77,7 @@ block layout-content
                 #SelectValue
               #ProgressBar
             .q2
-              p1=TherapistRecognition[4].targetproblem2pattern
+              p1=TherapistRecognition[0].targetproblem2pattern
             .SliderBar2
               input#slider2(type='range' min='0' max='100' value='50')
               #selector2
@@ -85,7 +85,7 @@ block layout-content
                 #SelectValue2
               #ProgressBar2
             .q3
-              p1=TherapistRecognition[4].targetproblem3pattern
+              p1=TherapistRecognition[0].targetproblem3pattern
             .SliderBar3
               input#slider3(type='range' min='0' max='100' value='50')
               #selector3
@@ -93,7 +93,7 @@ block layout-content
                 #SelectValue3
               #ProgressBar3
             .q4
-              p1=TherapistRecognition[4].targetproblem4pattern
+              p1=TherapistRecognition[0].targetproblem4pattern
             .SliderBar4
               input#slider4(type='range' min='0' max='100' value='50')
               #selector4
@@ -144,12 +144,16 @@ block layout-content
           #Changework.tabcontent
               h3 ChangeWork                      
               div.overall-changework
+              form(action="/changeWork" method="POST")
                       div.input-group
                         input.form-control#helpfulThing(type="text", required)
                         div.input-group-append
                           button(type="button", class="btn btn-add", onclick="addItem()") Add something that helps you
                           button(type="button", class="btn btn-remove", onClick="removeItem()") Remove something from the list
                       ul#dynamic-list
+                      input(type="submit")
+
+
     footer
       div.fcontainer
         div.row
