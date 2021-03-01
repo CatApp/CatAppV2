@@ -69,39 +69,65 @@ block layout-content
           #RecognitionandRevision.tabcontent
             p This the recognition and revision section
             .q1
-              p1=TherapistRecognition[4].targetproblem1pattern
-            .SliderBar
+              p1=TherapistRecognition[0].targetproblem1pattern
+            .SliderBar#SliderBar
               input#slider(type='range' min='0' max='100' value='50')
               #selector
                 .SelectBtn
                 #SelectValue
               #ProgressBar
+              - var trecog = TherapistRecognition[0].choice1
+              - var sliderclass = "SliderBar"
+              script.
+                var trecog = "#{trecog}";
+                var sliderclass = "#{sliderclass}";
+                IsSlider(sliderclass,trecog);
             .q2
-              p1=TherapistRecognition[4].targetproblem2pattern
-            .SliderBar2
+              p1=TherapistRecognition[0].targetproblem2pattern
+            .SliderBar2#SliderBar2
               input#slider2(type='range' min='0' max='100' value='50')
               #selector2
                 .SelectBtn2
                 #SelectValue2
               #ProgressBar2
+              - var trecog = TherapistRecognition[0].choice2
+              - var sliderclass = "SliderBar2"
+              script.
+                
+                var trecog = "#{trecog}";
+                var sliderclass = "#{sliderclass}";
+                IsSlider(sliderclass,trecog);
             .q3
-              p1=TherapistRecognition[4].targetproblem3pattern
-            .SliderBar3
+              p1=TherapistRecognition[0].targetproblem3pattern
+            .SliderBar3#SliderBar3
               input#slider3(type='range' min='0' max='100' value='50')
               #selector3
                 .SelectBtn3
                 #SelectValue3
               #ProgressBar3
+              - var trecog = TherapistRecognition[0].choice3
+              - var sliderclass = "SliderBar3"
+              script.
+                var trecog = "#{trecog}";
+                var sliderclass = "#{sliderclass}";
+                IsSlider(sliderclass,trecog);
             .q4
-              p1=TherapistRecognition[4].targetproblem4pattern
-            .SliderBar4
+              p1=TherapistRecognition[0].targetproblem4pattern
+            .SliderBar4#SliderBar4
               input#slider4(type='range' min='0' max='100' value='50')
               #selector4
                 .SelectBtn4
                 #SelectValue4
               #ProgressBar4 
+              - var trecog = TherapistRecognition[0].choice4
+              - var sliderclass = "SliderBar4"
+              script.
+                var trecog = "#{trecog}";
+                var sliderclass = "#{sliderclass}";
+                IsSlider(sliderclass,trecog);
+            input(type="submit")
             script.
-              var isVisible=true;
+              //var isVisible=true;
               var slider=document.getElementById("slider");
               var selector=document.getElementById("selector");
               var ProgressBar= document.getElementById("ProgressBar");
@@ -114,8 +140,8 @@ block layout-content
               var selector3=document.getElementById("selector3");
               var ProgressBar3= document.getElementById("ProgressBar3");
               SelectValue3.innerHTML = slider3.value;
-              SelectValue3.innerHTML = slider3.hide(isVisible);
-              alert( #RecognitionandRevision.getAttribute(isVisible) );
+              //SelectValue3.innerHTML = slider3.hide(isVisible);
+              //alert( #RecognitionandRevision.getAttribute(isVisible) );
               var slider4=document.getElementById("slider4");
               var selector4=document.getElementById("selector4");
               var ProgressBar4= document.getElementById("ProgressBar4");

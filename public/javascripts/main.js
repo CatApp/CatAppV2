@@ -115,3 +115,38 @@ function changeworkAdd() {
       "</tr>");  
 }
 
+function IsSlider(slider,recog)
+{
+  var s = document.getElementsByClassName(slider)[0];
+  var Tchoice = recog;
+  var children = s.children;
+  var sclass = s.className;
+  
+  if(Tchoice != "slider-bar")
+  {
+    for (let i = 0; i < children.length; i++) {
+
+      var name = children[i].nodeName;
+
+      if(name != "SCRIPT")
+      {
+        children[i].style.visibility = "hidden";
+      }
+    }
+    
+    document.getElementById(slider).style.boxShadow = "none";
+    document.getElementById(slider).style.margin = "auto";
+    document.getElementById(slider).style.marginBottom  = "2%"
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Please Enter answer here ...";
+    input.className = "Textbox-" + slider; // set the CSS class
+    s.appendChild(input); // put it into the DOM
+
+
+  }
+
+  
+
+}

@@ -128,12 +128,12 @@ module.exports = {
       .collection("TherapistRecognition")
       .find({})
       .toArray(function (err, docs) {
-        console.dir(docs[4])//or `$docs[0].targetproblem1pattern`
+        console.dir(docs[0])//or `$docs[0].targetproblem1pattern`
         if (err) {
           console.error(err);
         }
         return res.render("studentHome", {
-          title: `${docs[4].targetproblem1pattern}`,
+          title: `${docs[0].targetproblem1pattern}`,
           TherapistRecognition: docs
     });
   },
