@@ -13,7 +13,7 @@ block layout-content
         div.nav-left
           ul
             li  
-              a#therapistNameText Name
+              a(#therapistNameText)=Student.Fname+" "+Student.Lname
                 // Text to be changed by js depending on the person logged in
         
         div.nav-right
