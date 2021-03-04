@@ -121,41 +121,12 @@ module.exports = {
       });
 	},
 
-  // studentinfo2: function (app, req, res) {
-  //   console.info("Student info controller 2");
-  //   app
-  //     .set("myDb")
-  //     .collection("Therapists")
-  //     .find({})
-  //     .toArray(function (err, docs) {
-  //       console.dir(docs)
-  //       if (err) {
-  //         console.error(err);
-  //       }
-  //       return res.render("studentinfo", {
-  //         Therapists: docs
-  //       });
-  //     });
-    
-  // },
+
 
 	Recognition: function (app, req, res) {
     console.info("Insert Form Post controller");
-    /*var clientFormID = req.body.client;
-	var targetProblem1 =req.body.targetproblem1;
-	var inputChoice1 = req.body.choice1;
-	var targetProblem1Pattern=req.body.targetproblem1pattern;
-	var targetProblem2= req.body.targetproblem2;
-	var inputChoice2= req.body.choice2;
-	var targetProblem2Pattern= req.body.targetproblem2pattern;
-	var targetProblem3 = req.body.targetproblem3;
-	var inputChoice3 = req.body.choice3;
-	var targetProblem3Pattern = req.body.targetproblem3pattern;
-	var targetProblem4 = req.body.targetproblem4;
-	var inputChoice4 = req.body.choice4;
-	var targetProblem4Pattern= req.body.targetproblem4pattern;*/
-	console.info(req.body)
-	var newEntry=req.body;
+    console.info(req.body)
+    var newEntry=req.body;
     app
       .get("myDb")
       .collection("TherapistRecognition")
